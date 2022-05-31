@@ -1,4 +1,4 @@
-import { lazy, FC } from "react";
+import { FC } from "react";
 import PageLayout from "@components/Layout/PageLayout/PageLayout";
 
 export interface IRoute {
@@ -9,12 +9,12 @@ export interface IRoute {
 }
 
 const routes: IRoute[] = [
-  // {
-  //   path: "sample",
-  //   component: lazy(() => import("@components/FullPageLoader/FullPageLoader")),
-  //   exact: true,
-  //   layout: PageLayout,
-  // },
+  {
+    path: "/",
+    component: "aaa",
+    exact: true,
+    layout: PageLayout,
+  },
 ];
 
 export default routes;
