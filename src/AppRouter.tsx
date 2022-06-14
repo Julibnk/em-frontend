@@ -16,21 +16,21 @@ function AppRouter() {
   return (
     <Router>
       {/* <Suspense fallback={<FullPageLoader />}> */}
-      <Suspense>
-        <Routes>
-          {/* <Route path="/" element={<PublicRoutes />}>
+      {/* <Suspense> */}
+      <Routes>
+        {/* <Route path="/" element={<PublicRoutes />}>
             <Route path="login/*" element={<h1></h1>} />
           </Route> */}
 
-          <Route path="/" element={<PrivateRoutes />}>
-            <Route element={<ProtectedRoutes />} />
-          </Route>
+        <Route element={<PrivateRoutes />}>
+          <Route path="/*" element={<ProtectedRoutes />} />
+        </Route>
 
-          {/* <Route path="*">
+        {/* <Route path="*">
             <Route element={<NotFoundComponent />} />
           </Route> */}
-        </Routes>
-      </Suspense>
+      </Routes>
+      {/* </Suspense> */}
     </Router>
   );
 }
