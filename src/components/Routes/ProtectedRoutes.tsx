@@ -1,7 +1,7 @@
 import Layout from "@components/Layout/Layout";
 import SampleScreen from "@views/SampleScreen/SampleScreen";
-import { Suspense } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+// import { Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 
 // import FullPageLoader from "@components/FullPageLoader/FullPageLoader";
 
