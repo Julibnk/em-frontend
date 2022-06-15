@@ -1,12 +1,12 @@
 import { useSelector } from "@store/store";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 export interface ILocationState {
   from: { pathname?: string; search?: string };
 }
 
 const PublicRoutes = () => {
-  const location = useLocation();
+  // const location = useLocation();
 
   const { isAuthenticated } = useSelector((state) => state.auth);
 
