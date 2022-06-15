@@ -1,5 +1,5 @@
-import Layout from "@components/Layout/Layout";
-import SampleScreen from "@views/SampleScreen/SampleScreen";
+import Layout from "@components/Layout";
+import SampleScreen from "@views/SampleScreen";
 // import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 

@@ -1,9 +1,9 @@
 import styles from "./styles";
 import { createStyles } from "@mantine/core";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Navbar";
 
-const useStyles = createStyles(() => styles);
+const useStyles = createStyles(styles);
 
 const Layout = () => {
   const { classes } = useStyles();

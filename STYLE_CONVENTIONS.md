@@ -2,6 +2,10 @@
 
 ## 01 Typography system
 
+Font Inter
+
+Fonts font awesome
+
 ### Font size PX
 
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
@@ -10,20 +14,17 @@
 
 ### Main
 
+    Primary #1abc9c
+    Grey #bdc3c7
+    Accent #e67e22
+
 - Primary #344797
 - Tints #ebedf5
 - Shades #24326a
 
 ### Header gradient
 
-- From: #2fafcb
-- To: #343f75
-
 ### Greys
-
-- #eee
-- #ccc
-- #333 For almost black elements
 
 ## 04 Border radiius
 

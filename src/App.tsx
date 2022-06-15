@@ -1,3 +1,6 @@
+import { MantineProvider } from "@mantine/core";
+
+import { theme } from "./config";
 import useInitApp from "@hooks/useInitApp";
 import "./App.css";
 import AppRouter from "./AppRouter";
@@ -6,11 +9,16 @@ function App() {
   useInitApp();
 
   return (
-    // <ConfigProvider locale={esES}>
-    // {fullPageLoading && <FullPageLoader />}
-    <AppRouter></AppRouter>
-    // <Dialogs />
-    // </ConfigProvider>
+    <MantineProvider
+      theme={theme}
+      withCSSVariables
+      withGlobalStyles
+      withNormalizeCSS
+    >
+      {/* // {fullPageLoading && <FullPageLoader />} */}
+      <AppRouter></AppRouter>
+      {/* // <Dialogs /> */}
+    </MantineProvider>
   );
 }
 

@@ -5,6 +5,7 @@
       "@api/*": ["./api/*"],
       "@assets/*": ["./assets/*"],
       "@constants/*": ["./common/constants/*"],
+
       "@helpers/*": ["./common/helpers/*"],
       "@components/*": ["./components/*"],
       "@hooks/*": ["./hooks/*"],

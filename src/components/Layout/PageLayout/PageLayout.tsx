@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
-import PageContent from "@components/Layout/PageContent/PageContent";
-import PageFooter from "@components/Layout/PageFooter/PageFooter";
-import PageHeader from "@components/Layout/PageHeader/PageHeader";
+import PageContent from "@components/Layout/PageContent";
+import PageFooter from "@components/Layout/PageFooter";
+import PageHeader from "@components/Layout/PageHeader";
 // import Breadcrum from "../RouterBreadcrum/RouterBreadcrum";
 
 const PageLayout = ({ children }) => {
