@@ -38,8 +38,7 @@
     "build": "craco build",
     "lint": "eslint ./src/",
     "predeploy": "npm run build Ajustar cuando toque!!",
-    "deploy": "aws s3 sync build/ s3://YOUR_S3_DEPLOY_BUCKET_NAME Ajustar cuando toque!!",
-    "prepare": "husky install"
+    "deploy": "aws s3 sync build/ s3://YOUR_S3_DEPLOY_BUCKET_NAME Ajustar cuando toque!!"
   },
   "eslintConfig": {
     "extends": [
