@@ -1,9 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export interface IAuthState {
-  user: {} | null;
+  user: IAuthUser | null;
   isAuthenticated: boolean;
   masterdata: string[] | null;
+}
+
+interface IAuthUser {
+  username: string;
 }
 
 const initialState: IAuthState = {
@@ -49,7 +53,7 @@ export const authSlice = createSlice({
     builder.addCase(initApp.fulfilled, (state, action) => {
       state.masterdata = action.payload.masterdata;
       state.isAuthenticated = false;
-      state.user = action.payload.user;
+      state.user = { username: action.payload.user } as IAuthUser;
     });
     builder.addCase(initApp.rejected, (state) => {});
   },
