@@ -29,8 +29,8 @@
   },
   "scripts": {
     "start": "craco start",
-    "start:prod": "env-cmd -f .env.production craco start",
-    "start:dev": "env-cmd -f .env.development craco start",
+    "start:prod": "env-cmd -f .env.prod craco start",
+    "start:dev": "env-cmd -f .env.dev craco start",
     "start:local": "env-cmd -f .env.local craco start",
     "start:dotenv": "dotenv craco  start",
     "test": "craco test",
