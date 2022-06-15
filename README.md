@@ -7,3 +7,7 @@
 - react-router-dom
 - axios
 - moment
+
+## CICD
+
+Husky
