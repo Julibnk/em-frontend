@@ -52,7 +52,7 @@ export const authSlice = createSlice({
     //get user data
     builder.addCase(initApp.fulfilled, (state, action) => {
       state.masterdata = action.payload.masterdata;
-      state.isAuthenticated = false;
+      state.isAuthenticated = true;
       state.user = { username: action.payload.user } as IAuthUser;
     });
     builder.addCase(initApp.rejected, (state) => {});
