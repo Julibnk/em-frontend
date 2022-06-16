@@ -1,7 +1,7 @@
-import styles from "./styles";
-import { createStyles } from "@mantine/core";
-import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
+import styles from './styles';
+import { createStyles } from '@mantine/core';
+import Navbar from './Navbar';
+import Content from './Content';
 
 const useStyles = createStyles(styles);
 
@@ -9,10 +9,10 @@ const Layout = () => {
   const { classes } = useStyles();
 
   return (
-    <main className={classes.main}>
+    <div className={classes.container}>
       <Navbar />
-      <Outlet />
-    </main>
+      <Content />
+    </div>
   );
 };
 

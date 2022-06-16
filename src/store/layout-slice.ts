@@ -1,50 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-export const FOOTER_CONFIG = {
-  SECTION_1: 1,
-};
-
-export interface IFooterSectionState {
-  section_1: boolean;
-}
+import { createSlice } from '@reduxjs/toolkit';
 
 export interface ILayoutState {
-  footerSections: IFooterSectionState;
   fullPageLoading: false;
+  navbarCollapsed: boolean;
 }
 
-const initialFooterSections: IFooterSectionState = {
-  section_1: false,
-};
-
 const initialState: ILayoutState = {
-  footerSections: initialFooterSections,
+  navbarCollapsed: true,
   fullPageLoading: false,
 };
 
 export const layoutSlice = createSlice({
-  name: "[LAYOUT]",
+  name: '[LAYOUT]',
   initialState,
   reducers: {
     fullPageLoading: (state, { payload }) => {
       state.fullPageLoading = payload;
     },
 
-    changeFooterConfig: (state, { payload }) => {
-      switch (payload) {
-        case FOOTER_CONFIG.SECTION_1:
-          state.footerSections = {
-            ...initialFooterSections,
-            section_1: true,
-          };
-          break;
-        default:
-          break;
-      }
+    setNavbarCollapsed: (state, { payload }) => {
+      state.navbarCollapsed = payload;
     },
   },
 });
 
-export const { changeFooterConfig, fullPageLoading } = layoutSlice.actions;
+export const { setNavbarCollapsed, fullPageLoading } = layoutSlice.actions;
 
 export default layoutSlice.reducer;

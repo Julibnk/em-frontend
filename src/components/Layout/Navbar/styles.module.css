@@ -1,0 +1,7 @@
+.root {
+  background-color: red;
+  /* --mantine-color-turquoise-6; */
+  border: none;
+  width: auto;
+  padding: 2.4rem 3.2rem;
+}

@@ -1,5 +1,5 @@
 const styles = (theme) => ({
-  main: {
+  container: {
     display: 'flex',
     backgroundColor: theme.colors[theme.primaryColor][5],
   },

@@ -3,3 +3,7 @@
   padding: 1.6rem;
   /* overflow-y: auto; */
 }
+
+.container {
+  background-color: white;
+}
