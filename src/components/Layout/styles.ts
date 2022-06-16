@@ -1,6 +1,6 @@
 const styles = (theme) => ({
   main: {
-    display: "flex",
+    display: 'flex',
     backgroundColor: theme.colors[theme.primaryColor][5],
   },
 });
