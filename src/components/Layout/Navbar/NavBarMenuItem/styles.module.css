@@ -1,7 +1,30 @@
+/* Shared */
+.root {
+  padding: 0 1.2rem;
+}
 .inner {
   justify-content: flex-start;
 }
 
-.iconCollapsed {
+.icon_collapsed {
   margin-right: 0;
+}
+
+/* Subtle variant */
+.subtle_root {
+  color: var(--mantine-color-primary-1);
+}
+.subtle_root:hover {
+  color: var(--mantine-color-primary-6);
+}
+.subtle_root:hover svg {
+  color: var(--mantine-color-primary-6);
+}
+.subtle_icon {
+  color: var(--mantine-color-primary-1);
+}
+
+/* Filled variant */
+.filled_root:hover {
+  background-color: var(--mantine-color-primary-6);
 }

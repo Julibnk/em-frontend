@@ -1,6 +1,6 @@
 .root {
-  background-color: var(--mantine-color-primary-6);
+  background-color: transparent;
   border: none;
   width: auto;
-  padding: 2.4rem 3.2rem;
+  padding: 2.4rem 1.6rem;
 }
