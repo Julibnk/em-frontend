@@ -12,10 +12,16 @@ const NavBarMenu = () => {
   return (
     <Navbar.Section sx={{ display: 'flex', flexDirection: 'column' }} grow>
       {/* {/* <h1>Items</h1> */}
-      <NavBarMenuItem text="Mensajes" icon={MessageIcon} />
-      <NavBarMenuItem text="Contactos" icon={MessageIcon} />
-      <NavBarMenuItem text="Plantillas" icon={MessageIcon} />
-      <NavBarMenuItem text="Estadisticas de uso" icon={MessageIcon} />
+      <NavBarMenuItem text='Mensajes' icon={MessageIcon} />
+      <NavBarMenuItem text='Contactos' icon={MessageIcon} />
+      <NavBarMenuItem text='Plantillas' icon={MessageIcon} />
+      <NavBarMenuItem text='Estadisticas de uso' icon={MessageIcon} />
+      <NavBarMenuItem
+        className='mt-auto'
+        text='Plantillas'
+        icon={MessageIcon}
+      />
+      <NavBarMenuItem text='Estadisticas de uso' icon={MessageIcon} />
     </Navbar.Section>
   );
 };

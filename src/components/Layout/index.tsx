@@ -1,15 +1,10 @@
-import styles from './styles';
-import { createStyles } from '@mantine/core';
+import styles from './styles.module.css';
 import Navbar from './Navbar';
 import Content from './Content';
 
-const useStyles = createStyles(styles);
-
 const Layout = () => {
-  const { classes } = useStyles();
-
   return (
-    <div className={classes.container}>
+    <div className={styles.container}>
       <Navbar />
       <Content />
     </div>

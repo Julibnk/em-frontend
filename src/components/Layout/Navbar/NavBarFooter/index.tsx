@@ -14,7 +14,7 @@ const NavBarFooter = () => {
   return (
     <Navbar.Section>
       <Button variant="white" onClick={handleClick}>
-        Hola
+        {navbarCollapsed && 'Collapse'}
       </Button>
     </Navbar.Section>
   );

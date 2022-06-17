@@ -1,6 +1,10 @@
 import { Navbar } from '@mantine/core';
 const NavBarHeader = () => {
-  return <Navbar.Section>{/* <h1>Header</h1> */}</Navbar.Section>;
+  return (
+    <Navbar.Section>
+      <div style={{}}></div>
+    </Navbar.Section>
+  );
 };
 
 export default NavBarHeader;

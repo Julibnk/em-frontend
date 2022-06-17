@@ -4,7 +4,7 @@ export const theme: MantineThemeOverride = {
   black: '#05261F',
   primaryColor: 'turquoise',
   defaultRadius: 'md',
-
+  fontFamily: 'Inter',
   //   fontFamily
   //   loader
   //   datesLocale
