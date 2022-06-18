@@ -7,13 +7,14 @@ const ContactScreen = lazy(() => import('@views/ContactScreen'));
 const MessageScreen = lazy(() => import('@views/MessageScreen'));
 const ProfileScreen = lazy(() => import('@views/ProfileScreen'));
 const TemplateScreen = lazy(() => import('@views/TemplateScreen'));
+const NotFoundScreen = lazy(() => import('@views/NotFoundScreen'));
 // const Dashboard = lazy(() => import('./pages/Dashboard'));
 
 // import FullPageLoader from "@components/FullPageLoader/FullPageLoader";
 
-interface SuspenseProps {
-  children: React.ReactNode;
-}
+// interface SuspenseProps {
+//   children: React.ReactNode;
+// }
 
 // const Suspense = ({ children }: SuspenseProps) => {
 //   return (
@@ -54,6 +55,14 @@ const ProtectedRoutes = () => {
           element={
             <Suspense>
               <ProfileScreen />
+            </Suspense>
+          }
+        ></Route>
+        <Route
+          path='*'
+          element={
+            <Suspense>
+              <NotFoundScreen />
             </Suspense>
           }
         ></Route>
