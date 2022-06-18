@@ -1,8 +1,8 @@
 import { lazy, LazyExoticComponent } from 'react';
 
 export interface Route {
-  index?: false;
-  path: string;
+  index?: boolean;
+  path?: string;
   title: string;
   subtitle?: string;
   component: LazyExoticComponent<() => JSX.Element>;
@@ -10,20 +10,20 @@ export interface Route {
 
 export const routes: Route[] = [
   {
-    path: '',
+    index: true,
     title: 'Mensajes',
     subtitle: 'Mensajeeeees',
     component: lazy(() => import('@views/MessageScreen')),
   },
   {
-    index: false,
+    // index: false,
     path: 'contact/*',
     title: 'Contactos',
     subtitle: 'asda',
     component: lazy(() => import('@views/ContactScreen')),
   },
   {
-    index: false,
+    // index: false,
     path: 'template/*',
     title: 'Plantilla',
     subtitle: 'asda',
@@ -31,7 +31,7 @@ export const routes: Route[] = [
   },
 
   {
-    index: false,
+    // index: false,
     path: 'profile/*',
     title: 'Perfil',
     subtitle: 'asda',
@@ -39,7 +39,7 @@ export const routes: Route[] = [
   },
 
   {
-    index: false,
+    // index: false,
     path: '*',
     title: 'No encontrado',
     component: lazy(() => import('@views/NotFoundScreen')),

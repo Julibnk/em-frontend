@@ -5,15 +5,26 @@ import { Routes, Route } from 'react-router-dom';
 
 import { routes } from '../../config';
 
+console.log(routes);
+
 const ProtectedRoutes = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
         {routes.map(({ index, path, component: Component }, i) => {
-          return (
+          return index ? (
             <Route
               key={i}
-              index={index}
+              index
+              element={
+                <Suspense>
+                  <Component />
+                </Suspense>
+              }
+            />
+          ) : (
+            <Route
+              key={i}
               path={path}
               element={
                 <Suspense>
