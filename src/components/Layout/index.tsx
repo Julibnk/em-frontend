@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 import Navbar from './Navbar';
-import Content from './Content';
+import Content from './Main';
 
 const Layout = () => {
   return (

@@ -1,9 +1,9 @@
 import styles from './styles.module.css';
 import { Outlet } from 'react-router-dom';
 
-const PageContent = () => {
+const Main = () => {
   return (
-    <main className={styles.content}>
+    <main className={styles.main}>
       <div className={styles.container}>
         <Outlet />
       </div>
@@ -11,4 +11,4 @@ const PageContent = () => {
   );
 };
 
-export default PageContent;
+export default Main;
