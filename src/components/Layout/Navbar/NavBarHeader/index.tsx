@@ -8,7 +8,11 @@ const Logo = <FontAwesomeIcon icon={faFontAwesome} />;
 const NavBarHeader = () => {
   return (
     <Navbar.Section>
-      <NavBarMenuItem icon={Logo} text='EASYMESSAGE'></NavBarMenuItem>
+      <NavBarMenuItem
+        to='/cambiar'
+        icon={Logo}
+        text='EASYMESSAGE'
+      ></NavBarMenuItem>
     </Navbar.Section>
   );
 };

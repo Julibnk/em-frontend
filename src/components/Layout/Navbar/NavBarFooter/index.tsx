@@ -21,7 +21,7 @@ const NavBarFooter = () => {
 
   return (
     <Navbar.Section className={styles.root}>
-      <NavBarMenuItem icon={MenuIcon} onClick={handleClick} />
+      <NavBarMenuItem to='cambiar' icon={MenuIcon} onClick={handleClick} />
     </Navbar.Section>
   );
 };

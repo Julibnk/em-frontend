@@ -1,10 +1,11 @@
 import styles from './styles.module.css';
 
 import { Button, ButtonProps, ButtonVariant } from '@mantine/core';
-// import { Button, ButtonProps, createStyles } from '@mantine/core';
+import { Link } from 'react-router-dom';
 import { useSelector } from '@store/store';
 
 type Props = {
+  to: string;
   text?: string;
   icon?: React.ReactNode;
   className?: string;
@@ -35,21 +36,22 @@ const NavBarMenuItem = ({
   icon,
   variant = 'subtle',
   className,
-  onClick,
+  to,
 }: Props) => {
   const { navbarCollapsed } = useSelector((state) => state.layout);
 
   // Mantine Props
-  const buttonProps: ButtonProps<'button'> = {
+  const buttonProps: ButtonProps<typeof Link> = {
     fullWidth: navbarCollapsed,
     variant,
     leftIcon: icon,
     classNames: getClassNames(variant, navbarCollapsed),
     size: 'md',
+    to,
   };
 
   return (
-    <Button onClick={onClick} className={className} {...buttonProps}>
+    <Button component={Link} className={className} {...buttonProps}>
       {navbarCollapsed && text}
     </Button>
   );
