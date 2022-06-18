@@ -1,12 +1,12 @@
 :root {
-  --mantine-color-primary-0: var(--mantine-color-turquoise-0);
-  --mantine-color-primary-1: var(--mantine-color-turquoise-1);
-  --mantine-color-primary-2: var(--mantine-color-turquoise-2);
-  --mantine-color-primary-3: var(--mantine-color-turquoise-3);
-  --mantine-color-primary-4: var(--mantine-color-turquoise-4);
-  --mantine-color-primary-5: var(--mantine-color-turquoise-5);
-  --mantine-color-primary-6: var(--mantine-color-turquoise-6);
-  --mantine-color-primary-7: var(--mantine-color-turquoise-7);
-  --mantine-color-primary-8: var(--mantine-color-turquoise-8);
-  --mantine-color-primary-9: var(--mantine-color-turquoise-9);
+  --color-primary-0: var(--mantine-color-turquoise-0);
+  --color-primary-1: var(--mantine-color-turquoise-1);
+  --color-primary-2: var(--mantine-color-turquoise-2);
+  --color-primary-3: var(--mantine-color-turquoise-3);
+  --color-primary-4: var(--mantine-color-turquoise-4);
+  --color-primary-5: var(--mantine-color-turquoise-5);
+  --color-primary-6: var(--mantine-color-turquoise-6);
+  --color-primary-7: var(--mantine-color-turquoise-7);
+  --color-primary-8: var(--mantine-color-turquoise-8);
+  --color-primary-9: var(--mantine-color-turquoise-9);
 }

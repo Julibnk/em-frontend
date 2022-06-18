@@ -30,7 +30,6 @@ const NavBarMenu = () => {
       }}
       grow
     >
-      {/* {/* <h1>Items</h1> */}
       <NavBarMenuItem variant='filled' text='Mensajes' icon={CommentIcon} />
       <NavBarMenuItem text='Contactos' icon={ContactIcon} />
       <NavBarMenuItem text='Plantillas' icon={TemplateIcon} />

@@ -5,7 +5,7 @@ import { Button, ButtonProps, ButtonVariant } from '@mantine/core';
 import { useSelector } from '@store/store';
 
 type Props = {
-  text: string;
+  text?: string;
   icon?: React.ReactNode;
   className?: string;
   variant?: ButtonVariant;

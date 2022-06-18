@@ -1,5 +1,5 @@
 const SampleScreen = () => {
-  return <h1>Sample</h1>;
+  return <div style={{ backgroundColor: 'red' }}>Sample</div>;
 };
 
 export default SampleScreen;

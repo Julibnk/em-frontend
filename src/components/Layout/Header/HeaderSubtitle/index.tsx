@@ -1,5 +1,10 @@
-import React from 'react';
+import styles from './styles.module.css';
+import { Title } from '@mantine/core';
 
 export const HeaderSubtitle = () => {
-  return <div>HeaderSubtitle</div>;
+  return (
+    <Title className={styles.title} order={4}>
+      Subtitulo
+    </Title>
+  );
 };

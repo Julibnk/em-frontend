@@ -1,31 +1,27 @@
-import { faComment } from '@fortawesome/free-regular-svg-icons';
+import styles from './styles.module.css';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Navbar, Button } from '@mantine/core';
+import { Navbar } from '@mantine/core';
 import { setNavbarCollapsed } from '@store/layout-slice';
 import { useDispatch, useSelector } from '@store/store';
 import NavBarMenuItem from '../NavBarMenuItem';
+
+// Accordion
 
 const NavBarFooter = () => {
   const dispatch = useDispatch();
 
   const { navbarCollapsed } = useSelector((state) => state.layout);
 
-  const MessageIcon = <FontAwesomeIcon icon={faComment} />;
+  const MenuIcon = <FontAwesomeIcon icon={faBars} />;
 
   const handleClick = () => {
     dispatch(setNavbarCollapsed(!navbarCollapsed));
   };
 
   return (
-    <Navbar.Section>
-      <NavBarMenuItem
-        icon={MessageIcon}
-        text='Estadisticas de uso'
-        onClick={handleClick}
-      />
-      {/* <Button leftIcon={MessageIcon} variant='white' onClick={handleClick}>
-        {navbarCollapsed && 'Collapse'}
-      </Button> */}
+    <Navbar.Section className={styles.root}>
+      <NavBarMenuItem icon={MenuIcon} onClick={handleClick} />
     </Navbar.Section>
   );
 };

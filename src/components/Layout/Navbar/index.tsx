@@ -8,11 +8,8 @@ import NavBarMenu from './NavBarMenu';
 import styles from './styles.module.css';
 
 const CustomNavbar = () => {
-  // const { navbarCollapsed } = useSelector((state) => state.layout);
-
   const navbarProps = {
     classNames: {
-      // root: `${styles.root} ${!navbarCollapsed && styles.root_collapsed}`,
       root: `${styles.root}`,
     },
   };
