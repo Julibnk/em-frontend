@@ -5,12 +5,11 @@ import {
   faChartBar,
   faUser,
 } from '@fortawesome/free-regular-svg-icons';
-
+import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { Navbar } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NavBarMenuItem from '../NavBarMenuItem';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
 
 const CommentIcon = <FontAwesomeIcon icon={faComment} />;
 const ContactIcon = <FontAwesomeIcon icon={faAddressBook} />;
