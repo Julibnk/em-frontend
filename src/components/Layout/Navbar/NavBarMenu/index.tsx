@@ -25,12 +25,7 @@ const NavBarMenu = () => {
       }}
       grow
     >
-      <NavBarMenuItem
-        to='/'
-        variant='filled'
-        text='Mensajes'
-        icon={CommentIcon}
-      />
+      <NavBarMenuItem to='/' text='Mensajes' icon={CommentIcon} />
       <NavBarMenuItem to='/contact' text='Contactos' icon={ContactIcon} />
       <NavBarMenuItem to='/template' text='Plantillas' icon={TemplateIcon} />
       <NavBarMenuItem
