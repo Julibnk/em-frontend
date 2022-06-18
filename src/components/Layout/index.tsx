@@ -1,12 +1,12 @@
 import styles from './styles.module.css';
 import Navbar from './Navbar';
-import Content from './Main';
+import Main from './Main';
 
 const Layout = () => {
   return (
     <div className={styles.container}>
       <Navbar />
-      <Content />
+      <Main />
     </div>
   );
 };
