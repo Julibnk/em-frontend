@@ -1,38 +1,12 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  --color-primary-0: var(--mantine-color-turquoise-0);
+  --color-primary-1: var(--mantine-color-turquoise-1);
+  --color-primary-2: var(--mantine-color-turquoise-2);
+  --color-primary-3: var(--mantine-color-turquoise-3);
+  --color-primary-4: var(--mantine-color-turquoise-4);
+  --color-primary-5: var(--mantine-color-turquoise-5);
+  --color-primary-6: var(--mantine-color-turquoise-6);
+  --color-primary-7: var(--mantine-color-turquoise-7);
+  --color-primary-8: var(--mantine-color-turquoise-8);
+  --color-primary-9: var(--mantine-color-turquoise-9);
 }

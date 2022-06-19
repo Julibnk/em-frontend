@@ -1,5 +1,5 @@
-import { useSelector } from "@store/store";
-import { Navigate, Outlet } from "react-router-dom";
+import { useSelector } from '@store/store';
+import { Navigate, Outlet } from 'react-router-dom';
 
 export interface ILocationState {
   from: { pathname?: string; search?: string };
@@ -18,7 +18,7 @@ const PublicRoutes = () => {
 
   return isAuthenticated ? (
     // <Navigate replace to={redirectLocation} />
-    <Navigate replace to="/" />
+    <Navigate replace to='/*' />
   ) : (
     <Outlet />
   );

@@ -5,8 +5,10 @@
       "@api/*": ["./api/*"],
       "@assets/*": ["./assets/*"],
       "@constants/*": ["./common/constants/*"],
+
       "@helpers/*": ["./common/helpers/*"],
       "@components/*": ["./components/*"],
+      "@config/*": ["./config/*"],
       "@hooks/*": ["./hooks/*"],
       "@store/*": ["./store/*"],
       "@types/*": ["./types/*"],

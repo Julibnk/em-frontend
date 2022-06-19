@@ -1,21 +1,29 @@
-import Layout from "@components/Layout/Layout";
-import SampleScreen from "@views/SampleScreen/SampleScreen";
-// import { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Suspense } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-// import FullPageLoader from "@components/FullPageLoader/FullPageLoader";
+import Layout from '@components/Layout';
+import { routes } from '../../config';
 
 const ProtectedRoutes = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<SampleScreen />}></Route>
-      </Route>
-      {/* <Route path="*" element={<Navigate replace to={`/projects`} />} /> */}
-      {/* <Route index element={<h1>Hello</h1>} /> */}
-      {/* <Route path="bye" element={<h1>Bye</h1>} /> */}
+        {routes.map(({ path, component: Component }, i) => {
+          return (
+            <Route
+              key={i}
+              path={path}
+              element={
+                <Suspense>
+                  <Component />
+                </Suspense>
+              }
+            />
+          );
+        })}
 
-      {/* <Route path="*" element={<h1>Not found</h1>} /> */}
+        <Route path='/*' element={<Navigate to='message'></Navigate>}></Route>
+      </Route>
     </Routes>
   );
 };
