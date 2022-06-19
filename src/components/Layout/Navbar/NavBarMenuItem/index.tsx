@@ -10,7 +10,6 @@ type Props = {
   icon?: React.ReactNode;
   className?: string;
   variant?: ButtonVariant;
-  onClick?: () => void;
 };
 
 // Define los estilos del componente botton en funcion de la variante

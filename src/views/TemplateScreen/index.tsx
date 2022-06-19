@@ -1,5 +1,7 @@
+import TemplateTabs from './TemplateTabs';
+
 const TemplateScreen = () => {
-  return <div>TemplateScreen</div>;
+  return <TemplateTabs></TemplateTabs>;
 };
 
 export default TemplateScreen;

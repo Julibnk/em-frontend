@@ -1,13 +1,14 @@
-import { Breadcrumbs, Anchor } from '@mantine/core';
+import { faHouse, faHouseSignal } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Breadcrumbs, ActionIcon } from '@mantine/core';
 
 const items = [
-  { title: 'Mantine', href: '#' },
-  { title: 'Mantine hooks', href: '#' },
-  { title: 'use-id', href: '#' },
+  { title: '', href: '#' },
+  { title: 'Hola', href: '#' },
 ].map((item, index) => (
-  <Anchor href={item.href} key={index}>
-    {item.title}
-  </Anchor>
+  <ActionIcon variant='filled' color='turquoise' key={index}>
+    <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>
+  </ActionIcon>
 ));
 
 export const Breadcrum = () => {

@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Navbar } from '@mantine/core';
+import { Button, Navbar } from '@mantine/core';
 import { setNavbarCollapsed } from '@store/layout-slice';
 import { useDispatch, useSelector } from '@store/store';
 import NavBarMenuItem from '../NavBarMenuItem';
@@ -21,7 +21,9 @@ const NavBarFooter = () => {
 
   return (
     <Navbar.Section className={styles.root}>
-      <NavBarMenuItem to='cambiar' icon={MenuIcon} onClick={handleClick} />
+      {/* <FontAwesomeIcon icon={faBars} /> */}
+      <Button leftIcon={MenuIcon}> </Button>
+      {/* <NavBarMenuItem to='cambiar' icon={MenuIcon} /> */}
     </Navbar.Section>
   );
 };
