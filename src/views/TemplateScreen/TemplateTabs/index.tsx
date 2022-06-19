@@ -1,10 +1,18 @@
-import { Tabs } from '@mantine/core';
+import styles from './styles.module.css';
+
+import { Tabs, TabsProps } from '@mantine/core';
 import CategoryTab from '../CategoryTab';
 import TemplateTab from '../TemplateTab';
 
 const TemplateTabs = () => {
+  const tabsProps: TabsProps = {
+    variant: 'pills',
+    children: <></>,
+    classNames: { tabActive: styles.tabActive },
+  };
+
   return (
-    <Tabs variant='pills'>
+    <Tabs {...tabsProps}>
       <Tabs.Tab label='Plantillas'>
         <TemplateTab />
       </Tabs.Tab>

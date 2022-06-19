@@ -1,29 +1,31 @@
 import styles from './styles.module.css';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Navbar } from '@mantine/core';
+import { ActionIcon, ActionIconProps, Navbar } from '@mantine/core';
 import { setNavbarCollapsed } from '@store/layout-slice';
 import { useDispatch, useSelector } from '@store/store';
-import NavBarMenuItem from '../NavBarMenuItem';
-
-// Accordion
 
 const NavBarFooter = () => {
   const dispatch = useDispatch();
 
   const { navbarCollapsed } = useSelector((state) => state.layout);
 
-  const MenuIcon = <FontAwesomeIcon icon={faBars} />;
-
   const handleClick = () => {
     dispatch(setNavbarCollapsed(!navbarCollapsed));
   };
 
+  const actionIconProps: ActionIconProps<'button'> = {
+    variant: 'filled',
+    size: 'xl',
+    color: 'turquoise',
+    onClick: handleClick,
+  };
+
   return (
     <Navbar.Section className={styles.root}>
-      {/* <FontAwesomeIcon icon={faBars} /> */}
-      <Button leftIcon={MenuIcon}> </Button>
-      {/* <NavBarMenuItem to='cambiar' icon={MenuIcon} /> */}
+      <ActionIcon {...actionIconProps}>
+        <FontAwesomeIcon icon={faBars} />
+      </ActionIcon>
     </Navbar.Section>
   );
 };
