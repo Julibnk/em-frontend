@@ -8,6 +8,7 @@ import { Navbar } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NavBarMenuItem from '../NavBarMenuItem';
+import { useTranslation } from 'react-i18next';
 
 const CommentIcon = <FontAwesomeIcon icon={faComment} />;
 const ContactIcon = <FontAwesomeIcon icon={faAddressBook} />;
@@ -15,6 +16,8 @@ const TemplateIcon = <FontAwesomeIcon icon={faMessage} />;
 const UserIcon = <FontAwesomeIcon icon={faUser} />;
 
 const NavBarMenu = () => {
+  const { t } = useTranslation();
+
   return (
     <Navbar.Section
       sx={{
@@ -25,13 +28,25 @@ const NavBarMenu = () => {
       }}
       grow
     >
-      <NavBarMenuItem to='/message' text='Mensajes' icon={CommentIcon} />
-      <NavBarMenuItem to='/contact' text='Contactos' icon={ContactIcon} />
-      <NavBarMenuItem to='/template' text='Plantillas' icon={TemplateIcon} />
+      <NavBarMenuItem
+        to='/message'
+        text={t('message', { count: 0 })}
+        icon={CommentIcon}
+      />
+      <NavBarMenuItem
+        to='/contact'
+        text={t('contact', { count: 0 })}
+        icon={ContactIcon}
+      />
+      <NavBarMenuItem
+        to='/template'
+        text={t('template', { count: 0 })}
+        icon={TemplateIcon}
+      />
       <NavBarMenuItem
         to='/profile'
         className='mt-auto'
-        text='Perfil'
+        text={t('profile')}
         icon={UserIcon}
       />
     </Navbar.Section>

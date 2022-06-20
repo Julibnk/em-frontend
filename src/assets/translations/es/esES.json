@@ -1,0 +1,23 @@
+{
+  "message_one": "Mensaje",
+  "message_other": "Mensajes",
+
+  "contact_one": "Contacto",
+  "contact_other": "Contactos",
+
+  "template_one": "Plantilla",
+  "template_other": "Plantillas",
+
+  "category_one": "Categoría",
+  "category_other": "Categorías",
+
+  "profile": "Perfil",
+
+  "message_subtitle": "Consulte y envie Whatsapps a sus contactos",
+  "contact_subtitle": "Gestione sus contactos",
+  "template_subtitle": "Consulte y configure plantillas y categorias",
+  "profile_subtitle": "Revise y guarde sus datos",
+
+  "search": "Buscar",
+  "create": "Crear"
+}

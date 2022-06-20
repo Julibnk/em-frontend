@@ -1,4 +1,5 @@
 import { lazy, LazyExoticComponent } from 'react';
+import i18n from 'i18next';
 
 export interface Route {
   path: string;
@@ -10,26 +11,27 @@ export interface Route {
 export const routes: Route[] = [
   {
     path: 'message/*',
-    title: 'Mensajes',
-    subtitle: 'Consulte y envie Whatsapps a sus contactos',
+    title: i18n.t('message', { count: 0 }),
+    subtitle: i18n.t('message_subtitle'),
     component: lazy(() => import('@views/MessageScreen')),
   },
   {
     path: 'contact/*',
-    title: 'Contactos',
-    subtitle: 'Gestione sus contactos',
+    title: i18n.t('contact', { count: 0 }),
+    subtitle: i18n.t('contact_subtitle'),
+
     component: lazy(() => import('@views/ContactScreen')),
   },
   {
     path: 'template/*',
-    title: 'Plantillas',
-    subtitle: 'Consulte y configure plantillas y categorias',
+    title: i18n.t('template', { count: 0 }),
+    subtitle: i18n.t('template_subtitle'),
     component: lazy(() => import('@views/TemplateScreen')),
   },
   {
     path: 'profile/*',
-    title: 'Perfil',
-    subtitle: 'Revise y guarde sus datos',
+    title: i18n.t('profile'),
+    subtitle: i18n.t('profile_subtitle'),
     component: lazy(() => import('@views/ProfileScreen')),
   },
 ];

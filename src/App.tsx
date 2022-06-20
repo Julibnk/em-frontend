@@ -1,9 +1,9 @@
-import { MantineProvider } from "@mantine/core";
+import './App.css';
 
-import { theme } from "./config";
-import useInitApp from "@hooks/useInitApp";
-import "./App.css";
-import AppRouter from "./AppRouter";
+import { MantineProvider } from '@mantine/core';
+import { theme } from './config';
+import useInitApp from '@hooks/useInitApp';
+import AppRouter from './AppRouter';
 
 function App() {
   useInitApp();

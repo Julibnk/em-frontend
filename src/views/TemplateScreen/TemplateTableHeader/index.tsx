@@ -1,35 +1,23 @@
-import { Table } from '@mantine/core';
+import styles from './styles.module.css';
+import { Button, TextInput } from '@mantine/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAdd, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 const TemplateTableHeader = () => {
-  const elements = [
-    { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },
-    { position: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen' },
-    { position: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium' },
-    { position: 56, mass: 137.33, symbol: 'Ba', name: 'Barium' },
-    { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
-  ];
-
-  const rows = elements.map((element) => (
-    <tr key={element.name}>
-      <td>{element.position}</td>
-      <td>{element.name}</td>
-      <td>{element.symbol}</td>
-      <td>{element.mass}</td>
-    </tr>
-  ));
+  const { t } = useTranslation();
 
   return (
-    <Table>
-      <thead>
-        <tr>
-          <th>Element position</th>
-          <th>Element name</th>
-          <th>Symbol</th>
-          <th>Atomic mass</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </Table>
+    <div className={styles.root}>
+      <TextInput
+        placeholder={t('search')}
+        icon={<FontAwesomeIcon icon={faSearch} />}
+      />
+
+      <Button variant='filled' leftIcon={<FontAwesomeIcon icon={faAdd} />}>
+        {t('create')}
+      </Button>
+    </div>
   );
 };
 
