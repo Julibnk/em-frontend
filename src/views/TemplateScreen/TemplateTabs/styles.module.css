@@ -2,3 +2,7 @@
   /* TODO Revisar */
   background: var(--color-primary-1) !important;
 }
+
+.body {
+  padding-top: 3.2rem;
+}
