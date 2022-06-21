@@ -1,14 +1,14 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export interface IAuthState {
+export type IAuthState = {
   user: IAuthUser | null;
   isAuthenticated: boolean;
   masterdata: string[] | null;
-}
+};
 
-interface IAuthUser {
+type IAuthUser = {
   username: string;
-}
+};
 
 const initialState: IAuthState = {
   user: null,
@@ -17,19 +17,19 @@ const initialState: IAuthState = {
 };
 
 export const getUserAuth = createAsyncThunk(
-  "[AUTH]/getUserAuth",
+  '[AUTH]/getUserAuth',
   async (userData: FormData, { rejectWithValue }) => {}
 );
 
 export const initApp = createAsyncThunk(
-  "[AUTH]/initApp",
+  '[AUTH]/initApp',
   async (username: string, { dispatch, rejectWithValue }) => {
     return { masterdata: [], user: {} };
   }
 );
 
 export const authSlice = createSlice({
-  name: "[AUTH]",
+  name: '[AUTH]',
   initialState,
   reducers: {
     logout: (state) => {

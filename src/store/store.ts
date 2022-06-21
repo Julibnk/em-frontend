@@ -1,17 +1,17 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 import {
   useDispatch as useReduxDispatch,
   TypedUseSelectorHook,
   useSelector as useReduxSelector,
-} from "react-redux";
+} from 'react-redux';
 
-import authReducer, { IAuthState } from "@store/auth-slice";
-import layoutReducer, { ILayoutState } from "@store/layout-slice";
+import authReducer, { IAuthState } from '@store/auth-slice';
+import layoutReducer, { ILayoutState } from '@store/layout-slice';
 
-export interface RootState {
+export type RootState = {
   auth: IAuthState;
   layout: ILayoutState;
-}
+};
 
 export const store = configureStore({
   reducer: {
