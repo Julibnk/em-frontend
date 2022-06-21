@@ -8,8 +8,10 @@ const CustomModal = (props: ModalProps) => {
       header: styles.header,
       title: styles.title,
       body: styles.body,
+      close: styles.close,
     },
     centered: true,
+    closeOnClickOutside: false,
     ...props,
   };
 

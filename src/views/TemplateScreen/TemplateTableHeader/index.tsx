@@ -15,7 +15,7 @@ const TemplateTableHeader = () => {
       />
 
       <Button variant='filled' leftIcon={<FontAwesomeIcon icon={faAdd} />}>
-        {t('create')}
+        {t('add')}
       </Button>
     </div>
   );
