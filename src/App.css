@@ -10,3 +10,11 @@
   --color-primary-8: var(--mantine-color-turquoise-8);
   --color-primary-9: var(--mantine-color-turquoise-9);
 }
+
+.button_label {
+  font-weight: 500;
+}
+
+.input_label {
+  color: var(--mantine-color-gray-6);
+}

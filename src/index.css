@@ -56,3 +56,9 @@ p {
 .mt-auto {
   margin-top: auto !important;
 }
+
+.modal_form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}

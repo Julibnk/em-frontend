@@ -19,7 +19,7 @@ const CategoryForm = () => {
   const form = useForm({ initialValues });
 
   return (
-    <form>
+    <form className='modal_form'>
       <TextInput label={t('name')}></TextInput>
       <TextInput label={t('description')}></TextInput>
     </form>
