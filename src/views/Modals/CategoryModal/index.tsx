@@ -1,13 +1,11 @@
-import { Button, Group, ModalProps } from '@mantine/core';
+import { useTranslation } from 'react-i18next';
+import { useCallback } from 'react';
+import { ModalProps } from '@mantine/core';
+
+import Modal from '@components/MantineOverwrite/Modal';
+import CategoryForm from './CategoryForm';
 import { setModalOpenend } from '@store/layout-slice';
 import { useSelector, useDispatch } from '@store/store';
-import CategoryForm from './CategoryForm';
-import Modal from '@components/MantineOverwrite/Modal';
-import { useTranslation } from 'react-i18next';
-import { faFile } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SecondaryButton from '../../../components/MantineOverwrite/SecondaryButton/index';
-import { useCallback } from 'react';
 
 const CategoryModal = () => {
   const dispatch = useDispatch();
@@ -28,16 +26,7 @@ const CategoryModal = () => {
 
   return (
     <Modal {...modalProps}>
-      <CategoryForm />
-      <Group position='right'>
-        <SecondaryButton onClick={handleOnClose}>{t('cancel')}</SecondaryButton>
-        <Button
-          // onClick={handleOnClose}
-          leftIcon={<FontAwesomeIcon icon={faFile} />}
-        >
-          {t('create')}
-        </Button>
-      </Group>
+      <CategoryForm handleOnClose={handleOnClose} />
     </Modal>
   );
 };

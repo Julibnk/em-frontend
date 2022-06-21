@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { Tabs, TabsProps } from '@mantine/core';
 
 import { ScreenContent } from '@components/Layout/ScreenContent';
-import CategoryTableHeader from '../CategoryTableHeader/index';
+import CategoryTableHeader from '../CategoryTableHeader';
 import CategoryTable from '../CategoryTable';
 import TemplateTableHeader from '../TemplateTableHeader';
 import TemplateTable from '../TemplateTable';

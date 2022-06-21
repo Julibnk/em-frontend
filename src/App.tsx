@@ -11,6 +11,8 @@ const providerProps: MantineProviderProps = {
   classNames: {
     Button: { label: 'button_label' },
     TextInput: { label: 'input_label' },
+    MultiSelect: { label: 'input_label' },
+    Select: { label: 'input_label' },
   },
   defaultProps: {
     // Button: { size: 'sm' },

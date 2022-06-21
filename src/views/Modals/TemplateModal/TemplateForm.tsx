@@ -1,41 +1,33 @@
+// import React from 'react';
+
+// export const TemplateForm = () => {
+//   return <div>TemplateForm</div>;
+// };
+
 import { useForm } from '@mantine/hooks';
-import {
-  Button,
-  Group,
-  MultiSelect,
-  SelectItem,
-  TextInput,
-} from '@mantine/core';
+import { Button, Group } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import SecondaryButton from '@components/MantineOverwrite/SecondaryButton/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 
-type CategoryFormState = {
+type TemplateFormState = {
   name: string | null;
   description: string | null;
   templateIdList: string[];
 };
 
 type Props = {
-  // initialValues: CategoryFormState;
   handleOnClose: () => void;
 };
 
-const initialValues: CategoryFormState = {
+const initialValues: TemplateFormState = {
   name: null,
   description: null,
   templateIdList: [],
 };
 
-//TODO - Mock
-const templates: SelectItem[] = [
-  { value: '1', label: 'Cita barrancos' },
-  { value: '2', label: 'Otra' },
-  { value: '3', label: 'Otra x2' },
-];
-
-const CategoryForm = ({ handleOnClose }: Props) => {
+const TemplateForm = ({ handleOnClose }: Props) => {
   const { t } = useTranslation();
   const form = useForm({ initialValues });
 
@@ -45,12 +37,12 @@ const CategoryForm = ({ handleOnClose }: Props) => {
 
   return (
     <form className='modal_form' onSubmit={handleOnSubmit}>
-      <TextInput required label={t('name')}></TextInput>
-      <TextInput label={t('description')}></TextInput>
-      <MultiSelect
+      {/* <TextInput required label={t('name')}></TextInput> */}
+      {/* <TextInput label={t('description')}></TextInput> */}
+      {/* <MultiSelect
         data={templates}
         label={t('template', { count: 0 })}
-      ></MultiSelect>
+      ></MultiSelect> */}
       <Group position='right' mt='md'>
         <SecondaryButton onClick={handleOnClose}>{t('cancel')}</SecondaryButton>
         <Button type='submit' leftIcon={<FontAwesomeIcon icon={faFile} />}>
@@ -61,4 +53,4 @@ const CategoryForm = ({ handleOnClose }: Props) => {
   );
 };
 
-export default CategoryForm;
+export default TemplateForm;
