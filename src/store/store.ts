@@ -5,12 +5,12 @@ import {
   useSelector as useReduxSelector,
 } from 'react-redux';
 
-import authReducer, { IAuthState } from '@store/auth-slice';
-import layoutReducer, { ILayoutState } from '@store/layout-slice';
+import authReducer, { AuthState } from '@store/auth-slice';
+import layoutReducer, { LayoutState } from '@store/layout-slice';
 
 export type RootState = {
-  auth: IAuthState;
-  layout: ILayoutState;
+  auth: AuthState;
+  layout: LayoutState;
 };
 
 export const store = configureStore({
