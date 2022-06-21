@@ -1,9 +1,8 @@
-import styles from './styles.module.css';
-
-import { Button, Group, Modal, ModalProps } from '@mantine/core';
+import { Button, Group, ModalProps } from '@mantine/core';
 import { setModalOpenend } from '@store/layout-slice';
 import { useSelector, useDispatch } from '@store/store';
 import CategoryForm from './CategoryForm';
+import Modal from '@components/Modal';
 
 const CategoryModal = () => {
   const dispatch = useDispatch();
@@ -17,25 +16,10 @@ const CategoryModal = () => {
 
   const modalProps: ModalProps = {
     opened: opened,
-    centered: true,
     onClose: handleOnClose,
     title: 'test',
-    // padding: 'xs',
-    classNames: {
-      modal: styles.modal,
-      header: styles.header,
-      title: styles.title,
-      body: styles.body,
-    },
   };
 
-  //   <Modal
-  //   opened={opened}
-  //   // onClose={() => setOpened(false)}
-  //   title="Introduce yourself!"
-  // >
-  //   {/* Modal content */}
-  // </Modal>
   return (
     <Modal {...modalProps}>
       <CategoryForm></CategoryForm>
