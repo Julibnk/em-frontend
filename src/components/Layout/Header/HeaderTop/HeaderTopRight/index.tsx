@@ -1,8 +1,10 @@
+import { Avatar } from '@mantine/core';
+
 export const HeaderTopRight = () => {
   // <FontAwesomeIcon icon="fab fa-whatsapp" />
   return (
     <div>
-      <h5>A</h5>
+      <Avatar radius='xl'>RN</Avatar>
       {/* <ActionIcon> */}
       {/* <FontAwesomeIcon icon={['fab', 'whatsapp']} /> */}
       {/* <FontAwesomeIcon icon='whatsapp' /> */}

@@ -17,7 +17,8 @@ function App() {
       withNormalizeCSS
     >
       {/* // {fullPageLoading && <FullPageLoader />} */}
-      <AppRouter></AppRouter>
+
+      <AppRouter />
       <Dialogs />
     </MantineProvider>
   );

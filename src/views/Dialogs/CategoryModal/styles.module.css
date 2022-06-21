@@ -1,0 +1,19 @@
+.modal {
+  padding: 0;
+  overflow: hidden;
+}
+.header {
+  padding: 1.2rem 2.4rem;
+  background-color: var(--color-primary-6);
+}
+.title {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-primary-1);
+}
+.body {
+  padding: 1.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}

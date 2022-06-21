@@ -1,4 +1,9 @@
 {
+  "search": "Buscar",
+  "create": "Crear",
+  "name": "Nombre",
+  "description": "Descripción",
+
   "message_one": "Mensaje",
   "message_other": "Mensajes",
 
@@ -16,8 +21,5 @@
   "message_subtitle": "Consulte y envie Whatsapps a sus contactos",
   "contact_subtitle": "Gestione sus contactos",
   "template_subtitle": "Consulte y configure plantillas y categorias",
-  "profile_subtitle": "Revise y guarde sus datos",
-
-  "search": "Buscar",
-  "create": "Crear"
+  "profile_subtitle": "Revise y guarde sus datos"
 }
