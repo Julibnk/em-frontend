@@ -5,6 +5,7 @@
   "delete": "Eliminar",
   "edit": "Editar",
   "add": "Añadir",
+  "preview": "Vista previa",
 
   "name": "Nombre",
   "description": "Descripción",
@@ -25,6 +26,9 @@
 
   "category_one": "Categoría",
   "category_other": "Categorías",
+
+  "variable_one": "Variable",
+  "variable_other": "Variables",
 
   "profile": "Perfil",
 

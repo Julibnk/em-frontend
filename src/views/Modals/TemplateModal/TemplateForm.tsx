@@ -5,7 +5,14 @@
 // };
 
 import { useForm } from '@mantine/hooks';
-import { Button, Group } from '@mantine/core';
+import {
+  Button,
+  Group,
+  MultiSelect,
+  SelectItem,
+  TextInput,
+  Textarea,
+} from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import SecondaryButton from '@components/MantineOverwrite/SecondaryButton/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,6 +34,12 @@ const initialValues: TemplateFormState = {
   templateIdList: [],
 };
 
+const templates: SelectItem[] = [
+  { value: '1', label: 'Barrancos' },
+  { value: '2', label: 'Sella' },
+  { value: '3', label: 'Otro' },
+];
+
 const TemplateForm = ({ handleOnClose }: Props) => {
   const { t } = useTranslation();
   const form = useForm({ initialValues });
@@ -37,12 +50,11 @@ const TemplateForm = ({ handleOnClose }: Props) => {
 
   return (
     <form className='modal_form' onSubmit={handleOnSubmit}>
-      {/* <TextInput required label={t('name')}></TextInput> */}
-      {/* <TextInput label={t('description')}></TextInput> */}
-      {/* <MultiSelect
-        data={templates}
-        label={t('template', { count: 0 })}
-      ></MultiSelect> */}
+      <TextInput required label={t('name')} />
+      <TextInput label={t('description')} />
+      <Textarea label={t('preview')} />
+      <MultiSelect data={templates} label={t('category', { count: 0 })} />
+      <Textarea label={t('variable', { count: 0 })} />
       <Group position='right' mt='md'>
         <SecondaryButton onClick={handleOnClose}>{t('cancel')}</SecondaryButton>
         <Button type='submit' leftIcon={<FontAwesomeIcon icon={faFile} />}>
