@@ -2,7 +2,7 @@
   border-spacing: 0;
   border: 1px solid var(--mantine-color-gray-4);
   border-radius: 8px;
-  border-collapse: separate !important;
+  border-collapse: separate;
 }
 .table thead {
   border-top-left-radius: 8px;
@@ -11,7 +11,7 @@
 
 .table th {
   background-color: var(--mantine-color-gray-2);
-  color: var(--mantine-color-gray-6) !important;
+  color: var(--mantine-color-gray-6);
   font-weight: 500 !important;
 }
 
@@ -20,4 +20,8 @@
 }
 .table th:last-child {
   border-top-right-radius: 8px;
+}
+
+.table td {
+  padding: 1.2rem 0.8rem !important;
 }

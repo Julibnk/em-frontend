@@ -6,7 +6,11 @@ type Props = {
 };
 
 const CustomTable = ({ children }: Props) => {
-  return <Table className={styles.table}>{children}</Table>;
+  return (
+    <Table highlightOnHover className={styles.table}>
+      {children}
+    </Table>
+  );
 };
 
 export default CustomTable;
