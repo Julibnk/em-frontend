@@ -1,26 +1,26 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type DialogState = {
+type ModalState = {
   opened: boolean;
   loading: boolean;
 };
 
-type AllDialogs = 'category' | 'template';
+type AllModals = 'category' | 'template';
 
-type Dialogs = {
-  [dialog in AllDialogs]: DialogState;
+type Modals = {
+  [modal in AllModals]: ModalState;
 };
 
 export type LayoutState = {
   fullPageLoading: boolean;
   navbarCollapsed: boolean;
-  dialogs: Dialogs;
+  modals: Modals;
 };
 
 const initialState: LayoutState = {
   navbarCollapsed: true,
   fullPageLoading: false,
-  dialogs: {
+  modals: {
     category: {
       loading: false,
       opened: false,
@@ -44,22 +44,27 @@ export const layoutSlice = createSlice({
       state.navbarCollapsed = payload;
     },
 
-    setDialogOpenend: (
+    setModalOpenend: (
       state,
-      { payload }: PayloadAction<{ dialog: string; opened: boolean }>
+      { payload }: PayloadAction<{ modal: AllModals; opened: boolean }>
     ) => {
-      state.dialogs[payload.dialog].opened = payload.opened;
+      state.modals[payload.modal].opened = payload.opened;
     },
 
-    setDialogLoading: (
+    setModalLoading: (
       state,
-      { payload }: PayloadAction<{ dialog: string; loading: boolean }>
+      { payload }: PayloadAction<{ modal: AllModals; loading: boolean }>
     ) => {
-      state.dialogs[payload.dialog].loading = payload.loading;
+      state.modals[payload.modal].loading = payload.loading;
     },
   },
 });
 
-export const { setNavbarCollapsed, fullPageLoading } = layoutSlice.actions;
+export const {
+  setNavbarCollapsed,
+  fullPageLoading,
+  setModalOpenend,
+  setModalLoading,
+} = layoutSlice.actions;
 
 export default layoutSlice.reducer;
