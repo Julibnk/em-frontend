@@ -22,18 +22,14 @@ const TemplateTabs = () => {
     <Tabs {...tabsProps}>
       <Tabs.Tab label={t('template', { count: 0 })}>
         <ScreenContent>
-          <>
-            <TemplateTableHeader />
-            <TemplateTable />
-          </>
+          <TemplateTableHeader />
+          <TemplateTable />
         </ScreenContent>
       </Tabs.Tab>
       <Tabs.Tab label={t('category', { count: 0 })}>
         <ScreenContent>
-          <>
-            <CategoryTableHeader />
-            <CategoryTable />
-          </>
+          <CategoryTableHeader />
+          <CategoryTable />
         </ScreenContent>
       </Tabs.Tab>
     </Tabs>
