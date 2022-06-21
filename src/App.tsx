@@ -4,7 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import { theme } from './config';
 import useInitApp from '@hooks/useInitApp';
 import AppRouter from './AppRouter';
-import Dialogs from '@components/Dialogs';
+import Modals from '@views/Modals';
 
 function App() {
   useInitApp();
@@ -19,7 +19,7 @@ function App() {
       {/* // {fullPageLoading && <FullPageLoader />} */}
 
       <AppRouter />
-      <Dialogs />
+      <Modals />
     </MantineProvider>
   );
 }
