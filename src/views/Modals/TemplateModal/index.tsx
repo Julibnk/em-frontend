@@ -6,7 +6,7 @@ import Modal from '@components/MantineOverwrite/Modal';
 // import CategoryForm from './CategoryForm';
 import { setModalOpenend } from '@store/layout-slice';
 import { useSelector, useDispatch } from '@store/store';
-import TemplateForm from './TemplateForm';
+import TemplateForm from './form';
 
 const TemplateModal = () => {
   const dispatch = useDispatch();

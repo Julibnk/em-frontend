@@ -4,6 +4,8 @@ import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ActionIcon, Badge, useMantineTheme } from '@mantine/core';
+import { setModalOpenend } from '@store/layout-slice';
+import { useDispatch } from '@store/store';
 
 type Template = {
   id: string;
@@ -38,8 +40,16 @@ const CategoryTable = () => {
   ];
 
   const { colors } = useMantineTheme();
+  const dispatch = useDispatch();
 
   const color = Object.keys(colors);
+
+  const handleOnEdit = () => {
+    // const handleOnAdd = () => {
+    dispatch(setModalOpenend({ modal: 'category', opened: true }));
+    // };
+  };
+  const handleOnClick = () => {};
 
   const rows = elements.map((element) => (
     <tr key={element.id}>
@@ -58,10 +68,10 @@ const CategoryTable = () => {
       </Td>
       <Td>
         <ActionCell>
-          <ActionIcon>
+          <ActionIcon onClick={handleOnEdit}>
             <FontAwesomeIcon size='lg' icon={faPen}></FontAwesomeIcon>
           </ActionIcon>
-          <ActionIcon color='gray'>
+          <ActionIcon onClick={handleOnClick}>
             <FontAwesomeIcon size='lg' icon={faTrashAlt}></FontAwesomeIcon>
           </ActionIcon>
         </ActionCell>
