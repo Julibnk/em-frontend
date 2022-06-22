@@ -18,7 +18,7 @@ export type LayoutState = {
 };
 
 const initialState: LayoutState = {
-  navbarCollapsed: true,
+  navbarCollapsed: false,
   fullPageLoading: false,
   modals: {
     category: {

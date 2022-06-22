@@ -6,34 +6,48 @@
   color: var(--mantine-color-gray-5) !important;
   table-layout: fixed;
 }
+
 .table thead {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 
-/* .table th { */
 .th {
   background-color: var(--mantine-color-gray-2);
   color: var(--mantine-color-gray-7) !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   padding: 0.8rem 1.2rem !important;
 }
 
-/* .table th:first-child { */
 .th:first-child {
   border-top-left-radius: 8px;
 }
-/* .table th:last-child { */
+
 .th:last-child {
   border-top-right-radius: 8px;
 }
 
-/* .table td { */
 .td {
   padding: 1.2rem 1.2rem !important;
-  /* padding: 1.2rem 1.2rem; */
 }
 
 .table tr:hover {
   background-color: var(--mantine-color-gray-0) !important;
+}
+
+.left {
+  text-align: left !important;
+}
+
+.right {
+  text-align: right !important;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.emphasized {
+  color: var(--mantine-color-gray-7);
+  font-weight: 600;
 }

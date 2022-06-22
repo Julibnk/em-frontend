@@ -35,6 +35,6 @@ export const theme: MantineThemeOverride = {
     //   '#262728',
     // ],
 
-    carrot: ['#e67e22'],
+    // carrot: ['#e67e22'],
   },
 };
