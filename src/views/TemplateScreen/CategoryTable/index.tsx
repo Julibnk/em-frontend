@@ -1,7 +1,8 @@
-// import { Table } from '@mantine/core';
-// import CustomTable
-// import { idText } from 'typescript';
-import CustomTable from '@components/MantineOverwrite/Table';
+import { Table, Th, Td } from '@components/MantineOverwrite/Table';
+import { faEdit, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ActionIcon, Badge, useMantineTheme } from '@mantine/core';
 
 type Template = {
   id: string;
@@ -17,7 +18,18 @@ type Category = {
 
 const CategoryTable = () => {
   const elements: Category[] = [
-    { id: '1', name: '12', description: '12', templateList: [] },
+    {
+      id: '1',
+      name: '12',
+      description: '12',
+      templateList: [
+        { id: '1', name: 'cita_barranco' },
+        { id: '2', name: 'cita_barranco' },
+        { id: '3', name: 'cita_barranco' },
+        { id: '4', name: 'cita_barranco' },
+        { id: '5', name: 'cita_barranco' },
+      ],
+    },
     { id: '2', name: '12', description: '12', templateList: [] },
     { id: '3', name: '12', description: '12', templateList: [] },
     { id: '4', name: '12', description: '12', templateList: [] },
@@ -29,28 +41,68 @@ const CategoryTable = () => {
     // { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
   ];
 
+  const { colors } = useMantineTheme();
+  // const theme = useMantineTheme();
+
+  // console.log(theme);
+
+  const color = Object.keys(colors);
+
+  // debugger;
+  // console.log(colors);
+  // console.log(color);
+  // console.log(color[3]);
+
+  // const a = color[3];
+  // console.log(typeof a);
+  // console.log(colors['dark']);
+
   const rows = elements.map((element) => (
     <tr key={element.id}>
-      <td>{element.name}</td>
-      <td>{element.description}</td>
-      <td></td>
-      <td></td>
+      <Td>{element.name}</Td>
+      <Td>{element.description}</Td>
+      <Td>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.2rem' }}>
+          {element.templateList.map(({ id, name }, i) => {
+            console.log(color[i]);
+
+            return (
+              <Badge key={id} color={color[i]}>
+                {name}
+              </Badge>
+              // <Badge key={id}>{name}
+            );
+          })}
+        </div>
+      </Td>
+      <Td>
+        <div
+          style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center' }}
+        >
+          <ActionIcon>
+            <FontAwesomeIcon size='lg' icon={faPen}></FontAwesomeIcon>
+          </ActionIcon>
+          <ActionIcon>
+            <FontAwesomeIcon size='lg' icon={faTrashAlt}></FontAwesomeIcon>
+          </ActionIcon>
+        </div>
+      </Td>
     </tr>
   ));
 
   return (
-    <CustomTable>
+    <Table>
       {/* <table> */}
       <thead>
         <tr>
-          <th>Nombre</th>
-          <th>Descripcion</th>
-          <th>Plantillas</th>
-          <th>Acciones</th>
+          <Th>Nombre</Th>
+          <Th>Descripcion</Th>
+          <Th align='center'>Plantillas</Th>
+          <Th align='center'>Acciones</Th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>
-    </CustomTable>
+    </Table>
     // </table>
   );
 };

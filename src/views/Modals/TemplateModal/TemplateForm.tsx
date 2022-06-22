@@ -12,11 +12,13 @@ import {
   SelectItem,
   TextInput,
   Textarea,
+  Alert,
 } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import SecondaryButton from '@components/MantineOverwrite/SecondaryButton/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
+import { faAllergies } from '@fortawesome/free-solid-svg-icons';
 
 type TemplateFormState = {
   name: string | null;
@@ -50,6 +52,14 @@ const TemplateForm = ({ handleOnClose }: Props) => {
 
   return (
     <form className='modal_form' onSubmit={handleOnSubmit}>
+      <Alert
+        icon={<FontAwesomeIcon icon={faAllergies}></FontAwesomeIcon>}
+        title='Bummer!'
+        color='red'
+      >
+        Something terrible happened! You made a mistake and there is no going
+        back, your data was lost forever!
+      </Alert>
       <TextInput required label={t('name')} />
       <TextInput label={t('description')} />
       <Textarea label={t('preview')} />
