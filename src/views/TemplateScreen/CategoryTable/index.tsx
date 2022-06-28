@@ -5,30 +5,40 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { stringSorter } from '@helpers/sorters';
 import { ActionIcon, Badge, useMantineTheme } from '@mantine/core';
+import { init } from '@store/category-slice';
+import { init as initTemplate } from '@store/template-slice';
 import { setModalOpenend } from '@store/layout-slice';
-import { useDispatch } from '@store/store';
+import { useDispatch, useSelector } from '@store/store';
+import { Category, CategoryWithTemplates } from '../../../types/store';
 import { useTranslation } from 'react-i18next';
+import {
+  getAllCategoriesWithTemplates,
+  selectAllCategories,
+} from '@store/category-selector';
 
-type Template = {
-  id: string;
-  name: string;
-};
+// type Template = {
+//   id: string;
+//   name: string;
+// };
 
-type Category = {
-  id: string;
-  name: string;
-  description: string;
-  templateList: Template[];
-};
+// type Category = {
+//   id: string;
+//   name: string;
+//   description: string;
+//   templateList: Template[];
+// };
 
 type RowProps = {
-  category: Category;
+  category: CategoryWithTemplates;
 };
 
-const Row = ({ category }: RowProps) => {
-  const { id, name, description, templateList } = category;
+// Falta tipar
+
+const Row = ({ category }) => {
+  const { id, name, description, templates } = category;
 
   const { colors } = useMantineTheme();
+
   const dispatch = useDispatch();
 
   const color = Object.keys(colors).sort((a, b) => stringSorter(a, b));
@@ -46,7 +56,7 @@ const Row = ({ category }: RowProps) => {
       <Td>{description}</Td>
       <Td>
         <BadgeCell>
-          {templateList.map(({ id, name }, i) => {
+          {templates.map(({ id, name }, i) => {
             return (
               <Badge key={id} color={color[i]}>
                 {name}
@@ -70,22 +80,15 @@ const Row = ({ category }: RowProps) => {
 };
 
 const CategoryTable = () => {
-  const elements: Category[] = [
-    {
-      id: '1',
-      name: '12',
-      description: '12',
-      templateList: [
-        { id: '1', name: 'cita_barranco' },
-        { id: '2', name: 'cita_barranco' },
-        { id: '3', name: 'cita_barranco' },
-      ],
-    },
-    { id: '2', name: '12', description: '12', templateList: [] },
-    { id: '3', name: '12', description: '12', templateList: [] },
-    { id: '4', name: '12', description: '12', templateList: [] },
-    { id: '5', name: '12', description: '12', templateList: [] },
-  ];
+  const dispatch = useDispatch();
+  dispatch(init());
+  dispatch(initTemplate());
+
+  const categories = useSelector((state) =>
+    getAllCategoriesWithTemplates(state)
+  );
+
+  console.log(categories);
 
   const { t } = useTranslation();
 
@@ -100,7 +103,7 @@ const CategoryTable = () => {
         </tr>
       </thead>
       <tbody>
-        {elements.map((category) => (
+        {categories.map((category) => (
           <Row key={category.id} category={category}></Row>
         ))}
       </tbody>

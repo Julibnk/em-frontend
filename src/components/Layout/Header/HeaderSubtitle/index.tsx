@@ -16,8 +16,6 @@ import { routes } from '../../../../config';
 
 import { Routes, Route } from 'react-router-dom';
 
-console.log(routes);
-
 const HeaderSubtitle = () => {
   // return <h1>Hola</h1>;
   return (
