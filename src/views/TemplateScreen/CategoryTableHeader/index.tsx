@@ -17,7 +17,7 @@ const CategoryTableHeader = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className={styles.header}>
       <TextInput
         type='search'
         placeholder={t('search')}

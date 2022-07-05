@@ -6,10 +6,10 @@ import { selectTemplateById } from '@store/template-selector';
 
 type Props = {
   id: EntityId;
-  color: MantineColor;
+  color?: MantineColor;
 };
 
-export const CategoryBadge = ({ id, color = 'red' }: Props) => {
+export const CategoryBadge = ({ id, color = 'turquoise' }: Props) => {
   const category = useSelector((state) => selectCategoryById(state, id));
 
   if (typeof category === 'undefined') return <></>;
@@ -17,7 +17,7 @@ export const CategoryBadge = ({ id, color = 'red' }: Props) => {
   return <Badge color={color}>{category.name}</Badge>;
 };
 
-export const TemplateBadge = ({ id, color = 'red' }: Props) => {
+export const TemplateBadge = ({ id, color = 'turquoise' }: Props) => {
   const template = useSelector((state) => selectTemplateById(state, id));
 
   if (typeof template === 'undefined') return <></>;
