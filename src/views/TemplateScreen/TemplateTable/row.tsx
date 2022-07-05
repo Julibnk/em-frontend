@@ -1,28 +1,29 @@
 import { Td } from '@components/MantineOverwrite/Table';
-import { ActionCell, BadgeCell } from '@components/TableCells';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ActionIcon } from '@mantine/core';
+
 import { setModalOpenend } from '@store/layout-slice';
 import { useDispatch } from '@store/store';
-import { Category } from '../../../types/store';
-import { TemplateBadge } from '@components/Badges';
+import { ActionCell, BadgeCell } from '@components/TableCells';
+import { Template } from '../../../types/store';
+import { CategoryBadge } from '@components/Badges';
 
 type Props = {
-  category: Category;
+  template: Template;
 };
 
-const CategoryTableRow = ({ category }: Props) => {
-  const { id, name, description, templateIds } = category;
+const TemplateTableRow = ({ template }: Props) => {
+  const { id, name, description, categoryIds } = template;
 
   const dispatch = useDispatch();
 
   const handleOnEdit = () => {
-    dispatch(setModalOpenend({ modal: 'category', opened: true }));
+    dispatch(setModalOpenend({ modal: 'template', opened: true }));
   };
   const handleOnDelete = () => {
-    dispatch(setModalOpenend({ modal: 'category', opened: true }));
+    dispatch(setModalOpenend({ modal: 'template', opened: true }));
   };
 
   return (
@@ -31,10 +32,8 @@ const CategoryTableRow = ({ category }: Props) => {
       <Td>{description}</Td>
       <Td>
         <BadgeCell>
-          {templateIds.map((templateId, i) => {
-            return (
-              <TemplateBadge key={templateId} id={templateId}></TemplateBadge>
-            );
+          {categoryIds.map((id) => {
+            return <CategoryBadge key={id} id={id}></CategoryBadge>;
           })}
         </BadgeCell>
       </Td>
@@ -52,4 +51,4 @@ const CategoryTableRow = ({ category }: Props) => {
   );
 };
 
-export default CategoryTableRow;
+export default TemplateTableRow;

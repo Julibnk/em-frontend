@@ -1,16 +1,18 @@
 import { Table, Th } from '@components/MantineOverwrite/Table';
 import { init } from '@store/category-slice';
-import { init as initTemplate } from '@store/template-slice';
 import { useDispatch, useSelector } from '@store/store';
 import { useTranslation } from 'react-i18next';
 import { selectAllCategories } from '@store/category-selector';
 
 import CategoryTableRow from './row';
+import { useEffect } from 'react';
 
 const CategoryTable = () => {
   const dispatch = useDispatch();
-  dispatch(init());
-  dispatch(initTemplate());
+
+  useEffect(() => {
+    dispatch(init());
+  }, [dispatch]);
 
   const categories = useSelector((state) => selectAllCategories(state));
 

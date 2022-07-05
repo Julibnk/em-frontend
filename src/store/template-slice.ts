@@ -19,9 +19,9 @@ const templateSlice = createSlice({
       //     ['1231']: { name: '1231', templateIds: [] },
       //   });
       templateAdapter.addMany(state, [
-        { id: '100', name: 'Template 100', categoryIds: [] },
+        { id: '100', name: 'Template 100', categoryIds: [10, 40] },
         { id: '200', name: 'Template 200', categoryIds: [] },
-        { id: '300', name: 'Template 300', categoryIds: [] },
+        { id: '300', name: 'Template 300', categoryIds: ['20', '60'] },
         { id: '400', name: 'Template 400', categoryIds: [] },
         { id: '500', name: 'Template 500', categoryIds: [] },
         { id: '600', name: 'Template 600', categoryIds: [] },
