@@ -1,20 +1,20 @@
-export interface Category {
-  id: string;
+import { EntityId } from '@reduxjs/toolkit';
+
+export type Category = {
+  id: EntityId;
   name: string;
   description?: string;
-  templateIds: string[];
-}
+  templateIds: EntityId[];
+  // templates: Template[];
+};
 
-export interface CategoryWithTemplates extends Category {
-  templates: Template[];
-}
-
-export interface Template {
-  id: string;
+export type Template = {
+  id: EntityId;
   name: string;
   description?: string;
-  categoryIds: string[];
-}
+  categoryIds: EntityId[];
+  // categories: Category[];
+};
 
 // export interface TemplateWithCategories extends Template {
 //   categories: Category[];

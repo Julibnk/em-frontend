@@ -1,8 +1,9 @@
 import { templateAdapter } from './template-slice';
 import { RootState } from './store';
 
-export const { selectAll: selectAllTemplates } = templateAdapter.getSelectors(
-  (state: RootState) => state.template
-);
-
+// Selector que localiza las templates en el state
 export const selectTemplates = (state: RootState) => state.template;
+
+// Selectores del getEntityAdapter
+export const { selectAll: selectAllTemplates, selectById: selectTemplateById } =
+  templateAdapter.getSelectors((state: RootState) => selectTemplates(state));

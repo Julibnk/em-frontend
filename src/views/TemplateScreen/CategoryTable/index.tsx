@@ -9,33 +9,19 @@ import { init } from '@store/category-slice';
 import { init as initTemplate } from '@store/template-slice';
 import { setModalOpenend } from '@store/layout-slice';
 import { useDispatch, useSelector } from '@store/store';
-import { Category, CategoryWithTemplates } from '../../../types/store';
+import { Category } from '../../../types/store';
 import { useTranslation } from 'react-i18next';
 import {
-  getAllCategoriesWithTemplates,
+  // getAllCategoriesWithTemplates,
   selectAllCategories,
 } from '@store/category-selector';
 
-// type Template = {
-//   id: string;
-//   name: string;
-// };
-
-// type Category = {
-//   id: string;
-//   name: string;
-//   description: string;
-//   templateList: Template[];
-// };
-
 type RowProps = {
-  category: CategoryWithTemplates;
+  category: Category;
 };
 
-// Falta tipar
-
-const Row = ({ category }) => {
-  const { id, name, description, templates } = category;
+const Row = ({ category }: RowProps) => {
+  const { id, name, description, templateIds } = category;
 
   const { colors } = useMantineTheme();
 
@@ -56,9 +42,9 @@ const Row = ({ category }) => {
       <Td>{description}</Td>
       <Td>
         <BadgeCell>
-          {templates.map(({ id, name }, i) => {
+          {templateIds.map((templateId, i) => {
             return (
-              <Badge key={id} color={color[i]}>
+              <Badge key={templateId} color={color[i]}>
                 {name}
               </Badge>
             );
@@ -84,11 +70,7 @@ const CategoryTable = () => {
   dispatch(init());
   dispatch(initTemplate());
 
-  const categories = useSelector((state) =>
-    getAllCategoriesWithTemplates(state)
-  );
-
-  console.log(categories);
+  const categories = useSelector((state) => selectAllCategories(state));
 
   const { t } = useTranslation();
 

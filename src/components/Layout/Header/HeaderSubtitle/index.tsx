@@ -17,7 +17,6 @@ import { routes } from '../../../../config';
 import { Routes, Route } from 'react-router-dom';
 
 const HeaderSubtitle = () => {
-  // return <h1>Hola</h1>;
   return (
     <Routes>
       {/* <Route path='/*'> */}
