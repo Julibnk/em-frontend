@@ -17,3 +17,7 @@ export type Template = {
   variable3?: string;
   categoryIds: EntityId[];
 };
+
+export type Message = {
+  id: EntityId;
+};
