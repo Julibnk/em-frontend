@@ -7,12 +7,14 @@ import { faSearch, faAdd } from '@fortawesome/free-solid-svg-icons';
 
 import { useDispatch } from '@store/store';
 import { setModalOpenend } from '@store/layout-slice';
+import { setSelectedId } from '@store/category-slice';
 
 const CategoryTableHeader = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const handleOnAdd = () => {
+    dispatch(setSelectedId());
     dispatch(setModalOpenend({ modal: 'category', opened: true }));
   };
 

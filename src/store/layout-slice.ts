@@ -38,7 +38,7 @@ const initialState: LayoutState = {
 };
 
 export const layoutSlice = createSlice({
-  name: '[LAYOUT]',
+  name: 'layout',
   initialState,
   reducers: {
     fullPageLoading: (state, { payload }: PayloadAction<boolean>) => {

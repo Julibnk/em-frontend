@@ -23,12 +23,42 @@ const categorySlice = createSlice({
       //     ['1231']: { name: '1231', templateIds: [] },
       //   });
       categoryAdapter.addMany(state, [
-        { id: '10', name: 'Categoria 10', templateIds: ['100', '200'] },
-        { id: '20', name: 'Categoria 20', templateIds: [] },
-        { id: '30', name: 'Categoria 30', templateIds: [] },
-        { id: '40', name: 'Categoria 40', templateIds: [] },
-        { id: '50', name: 'Categoria 50', templateIds: [] },
-        { id: '60', name: 'Categoria 60', templateIds: [] },
+        {
+          id: '10',
+          name: 'Categoria 10',
+          description: 'Categoria pa tu face',
+          templateIds: ['100', '200'],
+        },
+        {
+          id: '20',
+          name: 'Categoria 20',
+          description: 'Categoria pa tu face',
+          templateIds: [],
+        },
+        {
+          id: '30',
+          name: 'Categoria 30',
+          description: 'Categoria pa tu face',
+          templateIds: [],
+        },
+        {
+          id: '40',
+          name: 'Categoria 40',
+          description: 'Categoria pa tu face',
+          templateIds: [],
+        },
+        {
+          id: '50',
+          name: 'Categoria 50',
+          description: 'Categoria pa tu face',
+          templateIds: [],
+        },
+        {
+          id: '60',
+          name: 'Categoria 60',
+          description: 'Categoria pa tu face',
+          templateIds: [],
+        },
       ]);
     },
     setSelectedId: helperSetSelectedId,
