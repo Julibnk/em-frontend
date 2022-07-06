@@ -5,7 +5,7 @@ type ModalState = {
   loading: boolean;
 };
 
-type AllModals = 'category' | 'template';
+export type AllModals = 'category' | 'template';
 
 type Modals = {
   [modal in AllModals]: ModalState;
