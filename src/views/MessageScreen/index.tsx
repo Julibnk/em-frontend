@@ -1,16 +1,13 @@
 import { ScreenContent } from '@components/Layout/ScreenContent';
-import TemplateTable from '@views/ConfigurationScreen/TemplateTable';
-import TemplateTableHeader from '@views/ConfigurationScreen/TemplateTableHeader';
+import MessageTable from './MessageTable';
+import MessageTableHeader from './MessageTableHeader/index';
 
 const MessageScreen = () => {
   return (
     <ScreenContent>
-      <TemplateTableHeader />
-      <TemplateTable />
+      <MessageTableHeader />
+      <MessageTable />
     </ScreenContent>
-    // <div>
-    //   <h1>MessageScreen</h1>
-    // </div>
   );
 };
 

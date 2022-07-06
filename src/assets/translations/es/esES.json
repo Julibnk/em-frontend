@@ -29,6 +29,9 @@
   "category_one": "Categoría",
   "category_other": "Categorías",
 
+  "filter_one": "Filtro",
+  "filter_other": "Filtros",
+
   "configuration": "Configuración",
 
   "variable_one": "Variable",
@@ -48,5 +51,9 @@
   "template_warning_title": "Infomación importante",
   "template_warning_content": "Para el correcto funcionamiento de la herramienta, es necesario que el nombre de la plantilla y el orden de las variables coincida con la configuracion de Watsapp Bussines",
   "go_to_waba_console": "Ir a consola de Watsapp Bussines",
-  "template_preview_placeholder": "Pegue aqui el texto completo de la plantilla para tenerlo como referencia"
+  "template_preview_placeholder": "Pegue aqui el texto completo de la plantilla para tenerlo como referencia",
+
+  "--- MESSAGE TABLE HEADER -----": "",
+  "create_message": "Crear mensaje",
+  "load_messages": "Cargar mensajes"
 }

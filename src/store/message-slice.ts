@@ -15,38 +15,28 @@ const initialState = messageAdapter.getInitialState({
 } as InitialState);
 
 const templateSlice = createSlice({
-  name: 'template',
+  name: 'message',
   initialState,
   reducers: {
-    init: (state) => {
-      //   categoryAdapter.addMany(state, {
-      //     ['1231']: { name: '1231', templateIds: [] },
-      //   });
-      messageAdapter.addMany(state, [
-        {
-          id: '100',
-        },
-        {
-          id: '200',
-        },
-        {
-          id: '300',
-        },
-        {
-          id: '400',
-        },
-        {
-          id: '500',
-        },
-        {
-          id: '600',
-        },
-      ]);
-    },
+    // init: (state) => {
+    //   //   categoryAdapter.addMany(state, {
+    //   //     ['1231']: { name: '1231', templateIds: [] },
+    //   //   });
+    //   messageAdapter.addMany(state, [
+    //     {
+    //       id: '100',
+    //       status: 'ERROR',
+    //       destinationPrefix: '+34',
+    //       destinationPhone: '6776712631',
+    //       templateId: '100',
+    //       phoneId: '5123142',
+    //     },
+    //   ]);
+    // },
     setSelectedId: helperSetSelectedId,
   },
 });
 
-export const { init, setSelectedId } = templateSlice.actions;
+export const { setSelectedId } = templateSlice.actions;
 
 export default templateSlice.reducer;

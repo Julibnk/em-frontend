@@ -11,26 +11,17 @@ import {
   BadgeCell,
   CellWithSubtitle,
 } from '@components/TableCells';
-import { Template } from '../../../types/store';
+import { Message } from '../../../types/store';
 import { CategoryBadge } from '@components/Badges';
 import { setSelectedId } from '@store/template-slice';
 import { EntityId } from '@reduxjs/toolkit';
 
 type Props = {
-  template: Template;
+  message: Message;
 };
 
-const TemplateTableRow = ({ template }: Props) => {
-  const {
-    id,
-    name,
-    description,
-    preview,
-    categoryIds,
-    variable1,
-    variable2,
-    variable3,
-  } = template;
+const TemplateTableRow = ({ message }: Props) => {
+  const { id } = message;
 
   const dispatch = useDispatch();
 
@@ -48,24 +39,24 @@ const TemplateTableRow = ({ template }: Props) => {
   return (
     <tr key={id}>
       <Td>
-        <CellWithSubtitle title={name} subtitle={description || ''} />
+        {/* <CellWithSubtitle title={name} subtitle={description || ''} /> */}
       </Td>
       {/* <Td>{description}</Td> */}
-      <Td>{preview}</Td>
+      {/* <Td>{preview}</Td> */}
 
       <Td>
-        <BadgeCell>
+        {/* <BadgeCell>
           {variable1 && <Badge color='violet'>{variable1}</Badge>}
           {variable2 && <Badge color='cyan'>{variable2}</Badge>}
           {variable3 && <Badge color='yellow'>{variable3}</Badge>}
-        </BadgeCell>
+        </BadgeCell> */}
       </Td>
       <Td>
-        <BadgeCell>
+        {/* <BadgeCell>
           {categoryIds.map((id) => {
             return <CategoryBadge key={id} id={id}></CategoryBadge>;
           })}
-        </BadgeCell>
+        </BadgeCell> */}
       </Td>
       <Td>
         <ActionCell>

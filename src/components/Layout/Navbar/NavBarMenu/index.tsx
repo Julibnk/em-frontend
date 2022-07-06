@@ -40,15 +40,11 @@ const NavBarMenu = () => {
       />
       <NavBarMenuItem
         to='/configuration'
+        className='mt-auto'
         text={t('configuration', { count: 0 })}
         icon={ConfigurationIcon}
       />
-      <NavBarMenuItem
-        to='/profile'
-        className='mt-auto'
-        text={t('profile')}
-        icon={UserIcon}
-      />
+      <NavBarMenuItem to='/profile' text={t('profile')} icon={UserIcon} />
     </Navbar.Section>
   );
 };

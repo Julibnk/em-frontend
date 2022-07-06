@@ -1,19 +1,21 @@
 import { Table, Th } from '@components/MantineOverwrite/Table';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from '@store/store';
-import { selectAllTemplates } from '@store/template-selector';
-import { init } from '@store/template-slice';
-import { useEffect } from 'react';
-import TemplateTableRow from './row';
+// import { useDispatch, useSelector } from '@store/store';
+import { useSelector } from '@store/store';
+// import { selectAllTemplates } from '@store/template-selector';
+// import { init } from '@store/template-slice';
+// import { useEffect } from 'react';
+import MessageTableRow from './row';
+import { selectAllMessages } from '@store/message-selector';
 
-const TemplateTable = () => {
-  const dispatch = useDispatch();
+const MessageTable = () => {
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(init());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(init());
+  // }, [dispatch]);
 
-  const templates = useSelector((state) => selectAllTemplates(state));
+  const messages = useSelector((state) => selectAllMessages(state));
 
   const { t } = useTranslation();
 
@@ -29,12 +31,12 @@ const TemplateTable = () => {
         </tr>
       </thead>
       <tbody>
-        {templates.map((template) => (
-          <TemplateTableRow key={template.id} template={template} />
+        {messages.map((message) => (
+          <MessageTableRow key={message.id} message={message} />
         ))}
       </tbody>
     </Table>
   );
 };
 
-export default TemplateTable;
+export default MessageTable;

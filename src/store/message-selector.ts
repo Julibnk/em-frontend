@@ -1,27 +1,19 @@
-import { templateAdapter } from './template-slice';
 import { RootState } from './store';
-import { SelectItem } from '@mantine/core';
+import { messageAdapter } from './message-slice';
 
 // Selector que localiza las templates en el state
-export const selectTemplates = (state: RootState) => state.template;
+export const selectMessages = (state: RootState) => state.message;
 
-// Selector que localiza el id de la plantilla seleccionada
-export const selectSelectedTemplateId = (state: RootState) =>
-  state.template.selectedId;
+// Selector que localiza el id del mensaje seleccionado
+export const selectSelectedMessageId = (state: RootState) =>
+  state.message.selectedId;
 
-// Selector que localiza la plantilla seleccionada
-export const selectSelectedTemplate = (state: RootState) => {
-  if (!state.template.selectedId) return undefined;
-  return selectTemplateById(state, state.template.selectedId);
-};
-
-// Selector para transformar el listado de plantillas para un componente Select o Combo
-export const selectTemplatesForCombo = (state: RootState): SelectItem[] => {
-  return selectAllTemplates(state).map((template) => {
-    return { value: template.id as string, label: template.name };
-  });
+// Selector que localiza el mensaje seleccionado
+export const selectSelectedMessage = (state: RootState) => {
+  if (!state.message.selectedId) return undefined;
+  return selectMessageById(state, state.message.selectedId);
 };
 
 // Selectores del getEntityAdapter
-export const { selectAll: selectAllTemplates, selectById: selectTemplateById } =
-  templateAdapter.getSelectors((state: RootState) => selectTemplates(state));
+export const { selectAll: selectAllMessages, selectById: selectMessageById } =
+  messageAdapter.getSelectors((state: RootState) => selectMessages(state));
