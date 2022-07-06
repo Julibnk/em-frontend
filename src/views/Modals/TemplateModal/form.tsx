@@ -91,6 +91,7 @@ const TemplateForm = ({ handleOnClose }: Props) => {
         autosize
         minRows={4}
         label={t('preview')}
+        placeholder={t('template_preview_placeholder')}
         {...form.getInputProps('preview')}
       />
 
