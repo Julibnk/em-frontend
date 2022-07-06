@@ -9,21 +9,21 @@ import { t } from 'i18next';
 import { selectModal } from '@store/layout-selector';
 import { selectSelectedTemplate } from '@store/template-selector';
 
-const TemplateModal = () => {
+const MessageModal = () => {
   const dispatch = useDispatch();
-  const modalState = useSelector((state) => selectModal(state, 'template'));
+  const modalState = useSelector((state) => selectModal(state, 'message'));
   const template = useSelector((state) => selectSelectedTemplate(state));
 
   const { opened, mode } = modalState;
 
   const handleOnClose = useCallback(() => {
-    dispatch(setModalOpenend({ modal: 'template', opened: false }));
+    dispatch(setModalOpenend({ modal: 'message', opened: false }));
   }, [dispatch]);
 
   const modalProps: ModalProps = {
     opened: opened,
     onClose: handleOnClose,
-    title: getModalTitle(mode, template?.name || ''),
+    title: getModalTitle(mode),
     size: 600,
   };
 
@@ -34,12 +34,12 @@ const TemplateModal = () => {
   );
 };
 
-function getModalTitle(mode: ModalMode, templateName: string): string {
+function getModalTitle(mode: ModalMode) {
   if (mode === 'edit') {
-    return t('edit_subject', { subject: templateName });
+    return t('edit_subject', { subject: t('message', { count: 1 }) });
   }
 
-  return t('create_subject', { subject: t('template', { count: 1 }) });
+  return t('create_subject', { subject: t('message', { count: 1 }) });
 }
 
-export default TemplateModal;
+export default MessageModal;

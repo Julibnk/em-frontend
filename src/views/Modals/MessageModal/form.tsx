@@ -1,5 +1,3 @@
-import styles from './styles.module.css';
-
 import { useForm } from '@mantine/hooks';
 import {
   Button,
@@ -36,7 +34,7 @@ type Props = {
   handleOnClose: () => void;
 };
 
-const TemplateForm = ({ handleOnClose }: Props) => {
+const MessageForm = ({ handleOnClose }: Props) => {
   const { t } = useTranslation();
 
   const template = useSelector((state) => selectSelectedTemplate(state));
@@ -64,7 +62,7 @@ const TemplateForm = ({ handleOnClose }: Props) => {
 
   return (
     <form className='modal_form' onSubmit={form.onSubmit(handleOnSubmit)}>
-      <Alert
+      {/* <Alert
         icon={<FontAwesomeIcon icon={faTriangleExclamation}></FontAwesomeIcon>}
         title={t('template_warning_title')}
         color='yellow'
@@ -117,7 +115,7 @@ const TemplateForm = ({ handleOnClose }: Props) => {
         data={categories}
         label={t('category', { count: 0 })}
         {...form.getInputProps('categoryIds')}
-      />
+      /> */}
 
       <Group position='right' mt='md'>
         <SecondaryButton onClick={handleOnClose}>{t('cancel')}</SecondaryButton>
@@ -132,4 +130,4 @@ const TemplateForm = ({ handleOnClose }: Props) => {
   );
 };
 
-export default TemplateForm;
+export default MessageForm;

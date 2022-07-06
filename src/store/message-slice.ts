@@ -18,21 +18,6 @@ const templateSlice = createSlice({
   name: 'message',
   initialState,
   reducers: {
-    // init: (state) => {
-    //   //   categoryAdapter.addMany(state, {
-    //   //     ['1231']: { name: '1231', templateIds: [] },
-    //   //   });
-    //   messageAdapter.addMany(state, [
-    //     {
-    //       id: '100',
-    //       status: 'ERROR',
-    //       destinationPrefix: '+34',
-    //       destinationPhone: '6776712631',
-    //       templateId: '100',
-    //       phoneId: '5123142',
-    //     },
-    //   ]);
-    // },
     setSelectedId: helperSetSelectedId,
   },
 });

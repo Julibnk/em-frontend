@@ -33,7 +33,6 @@ const MessageLoadModal = () => {
   return (
     <Modal {...modalProps}>
       <Dropzone
-        // disabled
         onDrop={(files) => console.log('accepted files', files)}
         onReject={(files) => console.log('rejected files', files)}
       >

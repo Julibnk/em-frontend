@@ -3,6 +3,7 @@
   border: 1px solid var(--mantine-color-gray-4);
   border-radius: 8px;
   border-collapse: separate;
+  background-color: #fff;
   color: var(--mantine-color-gray-5) !important;
   table-layout: fixed;
 }
@@ -10,6 +11,18 @@
 .table thead {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+}
+
+/* cambiar que cada tabla tenga su propio max heigh */
+.table tbody {
+  display: block;
+  max-height: 30rem;
+  overflow-y: auto;
+}
+.table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 
 .th {
