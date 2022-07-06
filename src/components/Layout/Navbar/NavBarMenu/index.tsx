@@ -8,8 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NavBarMenuItem from '../NavBarMenuItem';
 import { useTranslation } from 'react-i18next';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
+import { faGear, faHouse } from '@fortawesome/free-solid-svg-icons';
 
+const HomeIcon = <FontAwesomeIcon icon={faHouse} />;
 const CommentIcon = <FontAwesomeIcon icon={faComment} />;
 const ContactIcon = <FontAwesomeIcon icon={faAddressBook} />;
 const ConfigurationIcon = <FontAwesomeIcon icon={faGear} />;
@@ -28,6 +29,7 @@ const NavBarMenu = () => {
       }}
       grow
     >
+      <NavBarMenuItem to='/home' text={t('home')} icon={HomeIcon} />
       <NavBarMenuItem
         to='/message'
         text={t('message', { count: 0 })}
