@@ -10,6 +10,10 @@ export interface Route {
 
 export const routes: Route[] = [
   {
+    path: 'home/*',
+    component: lazy(() => import('@views/HomeScreen')),
+  },
+  {
     path: 'message/*',
     title: i18n.t('message', { count: 0 }),
     subtitle: i18n.t('message_subtitle'),
