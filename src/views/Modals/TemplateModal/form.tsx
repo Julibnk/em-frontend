@@ -11,7 +11,10 @@ import { useTranslation } from 'react-i18next';
 import SecondaryButton from '@components/MantineOverwrite/SecondaryButton/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
-import { faAllergies, faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFloppyDisk,
+  faTriangleExclamation,
+} from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from '@store/store';
 import { selectCategoriesForCombo } from '@store/category-selector';
 import { selectSelectedTemplate } from '@store/template-selector';
@@ -54,12 +57,18 @@ const TemplateForm = ({ handleOnClose }: Props) => {
   return (
     <form className='modal_form' onSubmit={form.onSubmit(handleOnSubmit)}>
       <Alert
-        icon={<FontAwesomeIcon icon={faAllergies}></FontAwesomeIcon>}
-        title='Bummer!'
-        color='red'
+        icon={<FontAwesomeIcon icon={faTriangleExclamation}></FontAwesomeIcon>}
+        title={t('template_warning_title')}
+        color='yellow'
       >
-        Something terrible happened! You made a mistake and there is no going
-        back, your data was lost forever!
+        <p>{t('template_warning_content')}</p>
+        <a
+          href='https://business.facebook.com/home/accounts?business_id=3104150219846655&global_scope_id=3104150219846655'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          {t('go_to_waba_console')}&#8594;
+        </a>
       </Alert>
       <TextInput required label={t('name')} {...form.getInputProps('name')} />
       <TextInput
