@@ -2,7 +2,7 @@ import { Td } from '@components/MantineOverwrite/Table';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ActionIcon } from '@mantine/core';
+import { ActionIcon, Badge } from '@mantine/core';
 
 import { setModalOpenend } from '@store/layout-slice';
 import { useDispatch } from '@store/store';
@@ -21,7 +21,16 @@ type Props = {
 };
 
 const TemplateTableRow = ({ template }: Props) => {
-  const { id, name, description, preview, categoryIds } = template;
+  const {
+    id,
+    name,
+    description,
+    preview,
+    categoryIds,
+    variable1,
+    variable2,
+    variable3,
+  } = template;
 
   const dispatch = useDispatch();
 
@@ -43,7 +52,14 @@ const TemplateTableRow = ({ template }: Props) => {
       </Td>
       {/* <Td>{description}</Td> */}
       <Td>{preview}</Td>
-      {/* <Td>{}</Td> */}
+
+      <Td>
+        <BadgeCell>
+          {variable1 && <Badge color='violet'>{variable1}</Badge>}
+          {variable2 && <Badge color='cyan'>{variable2}</Badge>}
+          {variable3 && <Badge color='yellow'>{variable3}</Badge>}
+        </BadgeCell>
+      </Td>
       <Td>
         <BadgeCell>
           {categoryIds.map((id) => {
