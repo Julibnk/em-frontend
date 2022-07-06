@@ -1,7 +1,6 @@
 import {
   faComment,
   faAddressBook,
-  faMessage,
   faUser,
 } from '@fortawesome/free-regular-svg-icons';
 import { Navbar } from '@mantine/core';
@@ -9,10 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NavBarMenuItem from '../NavBarMenuItem';
 import { useTranslation } from 'react-i18next';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
 
 const CommentIcon = <FontAwesomeIcon icon={faComment} />;
 const ContactIcon = <FontAwesomeIcon icon={faAddressBook} />;
-const TemplateIcon = <FontAwesomeIcon icon={faMessage} />;
+const ConfigurationIcon = <FontAwesomeIcon icon={faGear} />;
 const UserIcon = <FontAwesomeIcon icon={faUser} />;
 
 const NavBarMenu = () => {
@@ -39,9 +39,9 @@ const NavBarMenu = () => {
         icon={ContactIcon}
       />
       <NavBarMenuItem
-        to='/template'
-        text={t('template', { count: 0 })}
-        icon={TemplateIcon}
+        to='/configuration'
+        text={t('configuration', { count: 0 })}
+        icon={ConfigurationIcon}
       />
       <NavBarMenuItem
         to='/profile'
