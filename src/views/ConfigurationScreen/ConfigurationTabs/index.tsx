@@ -9,7 +9,7 @@ import TemplateTableHeader from '../TemplateTableHeader';
 import TemplateTable from '../TemplateTable';
 import { useTranslation } from 'react-i18next';
 
-const TemplateTabs = () => {
+const ConfigurationTabs = () => {
   const { t } = useTranslation();
 
   const tabsProps: TabsProps = {
@@ -36,4 +36,4 @@ const TemplateTabs = () => {
   );
 };
 
-export default TemplateTabs;
+export default ConfigurationTabs;

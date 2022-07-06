@@ -29,6 +29,8 @@
   "category_one": "Categoría",
   "category_other": "Categorías",
 
+  "configuration": "Configuración",
+
   "variable_one": "Variable",
   "variable_other": "Variables",
   "variable_number": "Variable {{number}}",
