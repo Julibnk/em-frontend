@@ -10,6 +10,8 @@ import SecondaryButton from '@components/MantineOverwrite/SecondaryButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
 
+import { Dropzone } from '@mantine/dropzone';
+
 const MessageLoadModal = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -30,6 +32,15 @@ const MessageLoadModal = () => {
 
   return (
     <Modal {...modalProps}>
+      <Dropzone
+        // disabled
+        onDrop={(files) => console.log('accepted files', files)}
+        onReject={(files) => console.log('rejected files', files)}
+      >
+        {() => {
+          return <h1>AAA</h1>;
+        }}
+      </Dropzone>
       <Group position='right' mt='md'>
         <SecondaryButton onClick={handleOnClose}>{t('cancel')}</SecondaryButton>
         <Button
