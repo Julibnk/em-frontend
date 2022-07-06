@@ -6,13 +6,14 @@ import Modal from '@components/MantineOverwrite/Modal';
 import CategoryForm from './form';
 import { setModalOpenend } from '@store/layout-slice';
 import { useSelector, useDispatch } from '@store/store';
+import { selectModal } from '@store/layout-selector';
 
 const CategoryModal = () => {
   const dispatch = useDispatch();
-  const { modals } = useSelector((state) => state.layout);
+  const modalState = useSelector((state) => selectModal(state, 'category'));
   const { t } = useTranslation();
 
-  const { opened } = modals.category;
+  const { opened } = modalState;
 
   const handleOnClose = useCallback(() => {
     dispatch(setModalOpenend({ modal: 'category', opened: false }));

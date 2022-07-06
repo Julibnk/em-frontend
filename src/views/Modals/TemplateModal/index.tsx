@@ -6,13 +6,14 @@ import Modal from '@components/MantineOverwrite/Modal';
 import { setModalOpenend } from '@store/layout-slice';
 import { useSelector, useDispatch } from '@store/store';
 import TemplateForm from './form';
+import { selectModal } from '@store/layout-selector';
 
 const TemplateModal = () => {
   const dispatch = useDispatch();
-  const { modals } = useSelector((state) => state.layout);
+  const modalState = useSelector((state) => selectModal(state, 'template'));
   const { t } = useTranslation();
 
-  const { opened } = modals.template;
+  const { opened } = modalState;
 
   const handleOnClose = useCallback(() => {
     dispatch(setModalOpenend({ modal: 'template', opened: false }));

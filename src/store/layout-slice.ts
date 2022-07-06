@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+type ModalMode = 'create' | 'edit' | 'display' | null;
+export type AllModals = 'category' | 'template';
+
 type ModalState = {
   opened: boolean;
   loading: boolean;
+  mode: ModalMode;
 };
-
-export type AllModals = 'category' | 'template';
 
 type Modals = {
   [modal in AllModals]: ModalState;
@@ -24,10 +26,13 @@ const initialState: LayoutState = {
     category: {
       loading: false,
       opened: false,
+      mode: null,
+      // mode: ,
     },
     template: {
       loading: false,
       opened: false,
+      mode: null,
     },
   },
 };
@@ -46,9 +51,15 @@ export const layoutSlice = createSlice({
 
     setModalOpenend: (
       state,
-      { payload }: PayloadAction<{ modal: AllModals; opened: boolean }>
+      {
+        payload,
+      }: PayloadAction<{ modal: AllModals; opened: boolean; mode?: ModalMode }>
     ) => {
       state.modals[payload.modal].opened = payload.opened;
+
+      typeof payload.mode === 'undefined'
+        ? (state.modals[payload.modal].mode = null)
+        : (state.modals[payload.modal].mode = payload.mode);
     },
 
     setModalLoading: (
