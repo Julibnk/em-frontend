@@ -4,6 +4,7 @@
   "save": "Guardar",
   "cancel": "Cancelar",
   "delete": "Eliminar",
+  "load": "Cargar",
   "edit": "Editar",
   "add": "Añadir",
   "preview": "Vista previa",
@@ -55,5 +56,5 @@
 
   "--- MESSAGE TABLE HEADER -----": "",
   "create_message": "Crear mensaje",
-  "load_messages": "Cargar mensajes"
+  "message_load": "Cargar mensajes"
 }

@@ -18,11 +18,13 @@ const MessageTableHeader = () => {
 
   const dispatch = useDispatch();
 
-  const handleOnAdd = () => {
-    dispatch(setSelectedId());
+  const handleOnCreateMessage = () => {
     dispatch(
       setModalOpenend({ modal: 'message', opened: true, mode: 'create' })
     );
+  };
+  const handleOnMessageLoad = () => {
+    dispatch(setModalOpenend({ modal: 'message_load', opened: true }));
   };
 
   return (
@@ -34,7 +36,7 @@ const MessageTableHeader = () => {
           icon={<FontAwesomeIcon icon={faSearch} />}
         />
         <SecondaryButton
-          onClick={handleOnAdd}
+          // onClick={handleOnAdd}
           leftIcon={<FontAwesomeIcon icon={faFilter} />}
         >
           {t('filter', { count: 0 })}
@@ -43,17 +45,17 @@ const MessageTableHeader = () => {
 
       <div className={styles.right}>
         <SecondaryButton
-          onClick={handleOnAdd}
+          onClick={handleOnCreateMessage}
           leftIcon={<FontAwesomeIcon icon={faPaperPlane} />}
         >
           {t('create_message')}
         </SecondaryButton>
         <Button
-          onClick={handleOnAdd}
+          onClick={handleOnMessageLoad}
           variant='filled'
           leftIcon={<FontAwesomeIcon icon={faCloudArrowUp} />}
         >
-          {t('load_messages')}
+          {t('message_load')}
         </Button>
       </div>
     </div>
