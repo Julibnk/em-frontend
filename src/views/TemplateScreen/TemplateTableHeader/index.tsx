@@ -14,7 +14,9 @@ const TemplateTableHeader = () => {
 
   const handleOnAdd = () => {
     dispatch(setSelectedId());
-    dispatch(setModalOpenend({ modal: 'template', opened: true }));
+    dispatch(
+      setModalOpenend({ modal: 'template', opened: true, mode: 'create' })
+    );
   };
 
   return (

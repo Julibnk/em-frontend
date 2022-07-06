@@ -56,7 +56,8 @@ export const layoutSlice = createSlice({
       }: PayloadAction<{ modal: AllModals; opened: boolean; mode?: ModalMode }>
     ) => {
       state.modals[payload.modal].opened = payload.opened;
-      state.modals[payload.modal].mode = payload.mode;
+
+      if (payload.mode) state.modals[payload.modal].mode = payload.mode;
     },
 
     setModalLoading: (

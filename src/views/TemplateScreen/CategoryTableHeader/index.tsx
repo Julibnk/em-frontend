@@ -15,7 +15,9 @@ const CategoryTableHeader = () => {
 
   const handleOnAdd = () => {
     dispatch(setSelectedId());
-    dispatch(setModalOpenend({ modal: 'category', opened: true }));
+    dispatch(
+      setModalOpenend({ modal: 'category', opened: true, mode: 'create' })
+    );
   };
 
   return (

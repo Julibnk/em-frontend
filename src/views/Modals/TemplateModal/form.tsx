@@ -11,10 +11,11 @@ import { useTranslation } from 'react-i18next';
 import SecondaryButton from '@components/MantineOverwrite/SecondaryButton/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
-import { faAllergies } from '@fortawesome/free-solid-svg-icons';
+import { faAllergies, faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from '@store/store';
 import { selectCategoriesForCombo } from '@store/category-selector';
 import { selectSelectedTemplate } from '@store/template-selector';
+import { selectModal } from '@store/layout-selector';
 
 type TemplateFormState = {
   name: string;
@@ -32,6 +33,7 @@ const TemplateForm = ({ handleOnClose }: Props) => {
 
   const template = useSelector((state) => selectSelectedTemplate(state));
   const categories = useSelector((state) => selectCategoriesForCombo(state));
+  const { mode } = useSelector((state) => selectModal(state, 'template'));
 
   const initialValues: TemplateFormState = {
     name: template?.name || '',
@@ -45,6 +47,9 @@ const TemplateForm = ({ handleOnClose }: Props) => {
   const handleOnSubmit = (values) => {
     console.log(values);
   };
+
+  const mainButtonIcon = mode === 'create' ? faFile : faFloppyDisk;
+  const mainButtonText = mode === 'create' ? t('create') : t('save');
 
   return (
     <form className='modal_form' onSubmit={form.onSubmit(handleOnSubmit)}>
@@ -70,8 +75,11 @@ const TemplateForm = ({ handleOnClose }: Props) => {
       <Textarea label={t('variable', { count: 0 })} />
       <Group position='right' mt='md'>
         <SecondaryButton onClick={handleOnClose}>{t('cancel')}</SecondaryButton>
-        <Button type='submit' leftIcon={<FontAwesomeIcon icon={faFile} />}>
-          {t('create')}
+        <Button
+          type='submit'
+          leftIcon={<FontAwesomeIcon icon={mainButtonIcon} />}
+        >
+          {mainButtonText}
         </Button>
       </Group>
     </form>
