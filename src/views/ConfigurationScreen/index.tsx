@@ -1,4 +1,4 @@
-import TemplateTabs from './TemplateTabs';
+import TemplateTabs from './ConfigurationTabs';
 
 const TemplateScreen = () => {
   return <TemplateTabs></TemplateTabs>;
