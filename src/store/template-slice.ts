@@ -9,11 +9,11 @@ export const templateAdapter = createEntityAdapter<Template>({
 });
 
 type InitialState = {
-  selectedId: EntityId | null;
+  selectedId: EntityId | undefined;
 };
 
 const initialState = templateAdapter.getInitialState({
-  selectedId: null,
+  selectedId: undefined,
 } as InitialState);
 
 const templateSlice = createSlice({

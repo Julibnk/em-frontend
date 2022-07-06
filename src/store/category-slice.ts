@@ -6,11 +6,11 @@ import { Category } from '../types/store';
 export const categoryAdapter = createEntityAdapter<Category>();
 
 type InitialState = {
-  selectedId: EntityId | null;
+  selectedId: EntityId | undefined;
 };
 
 const initialState = categoryAdapter.getInitialState({
-  selectedId: null,
+  selectedId: undefined,
 } as InitialState);
 
 const categorySlice = createSlice({

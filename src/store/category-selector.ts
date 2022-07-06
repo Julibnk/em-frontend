@@ -1,3 +1,4 @@
+import { SelectItem } from '@mantine/core';
 import { categoryAdapter } from './category-slice';
 import { RootState } from './store';
 // import { CategoryWithTemplates, TemplateWithCategories } from '../types/store';
@@ -11,8 +12,15 @@ export const selectSelectedCategoryId = (state: RootState) =>
 
 // Selector que localiza la categoria seleccionada
 export const selectSelectedCategory = (state: RootState) => {
-  if (!state.category.selectedId) return null;
+  if (!state.category.selectedId) return undefined;
   return selectCategoryById(state, state.category.selectedId);
+};
+
+// Selector para transformar el listado de categorias para un componente Select o Combo
+export const selectCategoriesForCombo = (state: RootState): SelectItem[] => {
+  return selectAllCategories(state).map((category) => {
+    return { value: category.id as string, label: category.name };
+  });
 };
 
 // Selectores del getEntityAdapter

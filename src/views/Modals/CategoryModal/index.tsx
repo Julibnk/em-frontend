@@ -28,8 +28,6 @@ const CategoryModal = () => {
     opened: opened,
     onClose: handleOnClose,
     title: getModalTitle(mode, category?.name || ''),
-
-    // t('create_subject', { subject: t('category', { count: 1 }) }),
   };
 
   return (
