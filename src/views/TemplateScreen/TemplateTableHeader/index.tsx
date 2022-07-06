@@ -5,6 +5,7 @@ import { faAdd, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from '@store/store';
 import { setModalOpenend } from '@store/layout-slice';
+import { setSelectedId } from '@store/template-slice';
 
 const TemplateTableHeader = () => {
   const { t } = useTranslation();
@@ -12,6 +13,7 @@ const TemplateTableHeader = () => {
   const dispatch = useDispatch();
 
   const handleOnAdd = () => {
+    dispatch(setSelectedId());
     dispatch(setModalOpenend({ modal: 'template', opened: true }));
   };
 

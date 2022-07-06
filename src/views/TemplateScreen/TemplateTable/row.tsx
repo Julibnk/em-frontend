@@ -6,7 +6,11 @@ import { ActionIcon } from '@mantine/core';
 
 import { setModalOpenend } from '@store/layout-slice';
 import { useDispatch } from '@store/store';
-import { ActionCell, BadgeCell } from '@components/TableCells';
+import {
+  ActionCell,
+  BadgeCell,
+  CellWithSubtitle,
+} from '@components/TableCells';
 import { Template } from '../../../types/store';
 import { CategoryBadge } from '@components/Badges';
 import { setSelectedId } from '@store/template-slice';
@@ -17,7 +21,7 @@ type Props = {
 };
 
 const TemplateTableRow = ({ template }: Props) => {
-  const { id, name, description, categoryIds } = template;
+  const { id, name, description, preview, categoryIds } = template;
 
   const dispatch = useDispatch();
 
@@ -34,8 +38,12 @@ const TemplateTableRow = ({ template }: Props) => {
 
   return (
     <tr key={id}>
-      <Td emphasized>{name}</Td>
-      <Td>{description}</Td>
+      <Td>
+        <CellWithSubtitle title={name} subtitle={description || ''} />
+      </Td>
+      {/* <Td>{description}</Td> */}
+      <Td>{preview}</Td>
+      {/* <Td>{}</Td> */}
       <Td>
         <BadgeCell>
           {categoryIds.map((id) => {

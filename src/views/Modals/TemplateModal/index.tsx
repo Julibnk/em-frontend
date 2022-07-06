@@ -1,19 +1,20 @@
-import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 import { ModalProps } from '@mantine/core';
 
 import Modal from '@components/MantineOverwrite/Modal';
-import { setModalOpenend } from '@store/layout-slice';
+import { ModalMode, setModalOpenend } from '@store/layout-slice';
 import { useSelector, useDispatch } from '@store/store';
 import TemplateForm from './form';
+import { t } from 'i18next';
 import { selectModal } from '@store/layout-selector';
+import { selectSelectedTemplate } from '@store/template-selector';
 
 const TemplateModal = () => {
   const dispatch = useDispatch();
   const modalState = useSelector((state) => selectModal(state, 'template'));
-  const { t } = useTranslation();
+  const template = useSelector((state) => selectSelectedTemplate(state));
 
-  const { opened } = modalState;
+  const { opened, mode } = modalState;
 
   const handleOnClose = useCallback(() => {
     dispatch(setModalOpenend({ modal: 'template', opened: false }));
@@ -22,7 +23,8 @@ const TemplateModal = () => {
   const modalProps: ModalProps = {
     opened: opened,
     onClose: handleOnClose,
-    title: t('create_subject', { subject: t('template', { count: 1 }) }),
+    title: getModalTitle(mode, template?.name || ''),
+    size: 600,
   };
 
   return (
@@ -31,5 +33,13 @@ const TemplateModal = () => {
     </Modal>
   );
 };
+
+function getModalTitle(mode: ModalMode, templateName: string): string {
+  if (mode === 'edit') {
+    return t('edit_subject', { subject: templateName });
+  }
+
+  return t('create_subject', { subject: t('template', { count: 1 }) });
+}
 
 export default TemplateModal;

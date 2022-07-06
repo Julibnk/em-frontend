@@ -16,8 +16,6 @@ const CategoryModal = () => {
   const modalState = useSelector((state) => selectModal(state, 'category'));
   const category = useSelector((state) => selectSelectedCategory(state));
 
-  console.log(category);
-
   const { opened, mode } = modalState;
 
   const handleOnClose = useCallback(() => {

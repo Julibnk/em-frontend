@@ -22,7 +22,8 @@ const TemplateTable = () => {
       <thead>
         <tr>
           <Th>{t('name')}</Th>
-          <Th>{t('description')}</Th>
+          {/* <Th>{t('description')}</Th> */}
+          <Th>{t('preview')}</Th>
           <Th textAlign='center'>{t('category', { count: 0 })}</Th>
           <Th textAlign='center'>{t('actions')}</Th>
         </tr>

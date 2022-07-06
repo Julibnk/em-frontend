@@ -1,15 +1,8 @@
-// import React from 'react';
-
-// export const TemplateForm = () => {
-//   return <div>TemplateForm</div>;
-// };
-
 import { useForm } from '@mantine/hooks';
 import {
   Button,
   Group,
   MultiSelect,
-  SelectItem,
   TextInput,
   Textarea,
   Alert,
@@ -19,39 +12,42 @@ import SecondaryButton from '@components/MantineOverwrite/SecondaryButton/index'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { faAllergies } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from '@store/store';
+import { selectCategoriesForCombo } from '@store/category-selector';
+import { selectSelectedTemplate } from '@store/template-selector';
 
 type TemplateFormState = {
-  name: string | null;
-  description: string | null;
-  templateIdList: string[];
+  name: string;
+  description: string;
+  preview: string;
+  categoryIds: string[];
 };
 
 type Props = {
   handleOnClose: () => void;
 };
 
-const initialValues: TemplateFormState = {
-  name: null,
-  description: null,
-  templateIdList: [],
-};
-
-const templates: SelectItem[] = [
-  { value: '1', label: 'Barrancos' },
-  { value: '2', label: 'Sella' },
-  { value: '3', label: 'Otro' },
-];
-
 const TemplateForm = ({ handleOnClose }: Props) => {
   const { t } = useTranslation();
+
+  const template = useSelector((state) => selectSelectedTemplate(state));
+  const categories = useSelector((state) => selectCategoriesForCombo(state));
+
+  const initialValues: TemplateFormState = {
+    name: template?.name || '',
+    description: template?.description || '',
+    preview: template?.preview || '',
+    categoryIds: template?.categoryIds as string[],
+  };
+
   const form = useForm({ initialValues });
 
-  const handleOnSubmit = () => {
-    form.onSubmit((values) => console.log(values));
+  const handleOnSubmit = (values) => {
+    console.log(values);
   };
 
   return (
-    <form className='modal_form' onSubmit={handleOnSubmit}>
+    <form className='modal_form' onSubmit={form.onSubmit(handleOnSubmit)}>
       <Alert
         icon={<FontAwesomeIcon icon={faAllergies}></FontAwesomeIcon>}
         title='Bummer!'
@@ -60,10 +56,17 @@ const TemplateForm = ({ handleOnClose }: Props) => {
         Something terrible happened! You made a mistake and there is no going
         back, your data was lost forever!
       </Alert>
-      <TextInput required label={t('name')} />
-      <TextInput label={t('description')} />
-      <Textarea label={t('preview')} />
-      <MultiSelect data={templates} label={t('category', { count: 0 })} />
+      <TextInput required label={t('name')} {...form.getInputProps('name')} />
+      <TextInput
+        label={t('description')}
+        {...form.getInputProps('description')}
+      />
+      <Textarea label={t('preview')} {...form.getInputProps('preview')} />
+      <MultiSelect
+        data={categories}
+        label={t('category', { count: 0 })}
+        {...form.getInputProps('categoryIds')}
+      />
       <Textarea label={t('variable', { count: 0 })} />
       <Group position='right' mt='md'>
         <SecondaryButton onClick={handleOnClose}>{t('cancel')}</SecondaryButton>

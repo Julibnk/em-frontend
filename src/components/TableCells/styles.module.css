@@ -16,3 +16,13 @@
   gap: 1.2rem;
   flex-wrap: wrap;
 }
+
+.title {
+  display: block;
+  color: var(--mantine-color-gray-7);
+  font-weight: 600;
+}
+
+.subtitle {
+  display: block;
+}
