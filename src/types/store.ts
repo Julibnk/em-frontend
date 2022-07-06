@@ -5,7 +5,6 @@ export type Category = {
   name: string;
   description?: string;
   templateIds: EntityId[];
-  // templates: Template[];
 };
 
 export type Template = {
@@ -13,9 +12,4 @@ export type Template = {
   name: string;
   description?: string;
   categoryIds: EntityId[];
-  // categories: Category[];
 };
-
-// export interface TemplateWithCategories extends Template {
-//   categories: Category[];
-// }

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type ModalMode = 'create' | 'edit' | 'display' | null;
+export type ModalMode = 'create' | 'edit' | 'display' | null;
 export type AllModals = 'category' | 'template';
 
 type ModalState = {

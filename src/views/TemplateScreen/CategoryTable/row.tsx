@@ -8,6 +8,7 @@ import { setModalOpenend } from '@store/layout-slice';
 import { useDispatch } from '@store/store';
 import { Category } from '../../../types/store';
 import { TemplateBadge } from '@components/Badges';
+import { setSelectedId } from '@store/category-slice';
 
 type Props = {
   category: Category;
@@ -19,9 +20,13 @@ const CategoryTableRow = ({ category }: Props) => {
   const dispatch = useDispatch();
 
   const handleOnEdit = () => {
-    dispatch(setModalOpenend({ modal: 'category', opened: true }));
+    dispatch(setSelectedId(id));
+    dispatch(
+      setModalOpenend({ modal: 'category', opened: true, mode: 'edit' })
+    );
   };
   const handleOnDelete = () => {
+    dispatch(setSelectedId(id));
     dispatch(setModalOpenend({ modal: 'category', opened: true }));
   };
 
