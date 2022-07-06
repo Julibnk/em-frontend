@@ -1,3 +1,5 @@
+import styles from './styles.module.css';
+
 import { useForm } from '@mantine/hooks';
 import {
   Button,
@@ -24,6 +26,9 @@ type TemplateFormState = {
   name: string;
   description: string;
   preview: string;
+  variable1: string;
+  variable2: string;
+  variable3: string;
   categoryIds: string[];
 };
 
@@ -42,6 +47,9 @@ const TemplateForm = ({ handleOnClose }: Props) => {
     name: template?.name || '',
     description: template?.description || '',
     preview: template?.preview || '',
+    variable1: template?.variable1 || '',
+    variable2: template?.variable2 || '',
+    variable3: template?.variable3 || '',
     categoryIds: template?.categoryIds as string[],
   };
 
@@ -60,6 +68,7 @@ const TemplateForm = ({ handleOnClose }: Props) => {
         icon={<FontAwesomeIcon icon={faTriangleExclamation}></FontAwesomeIcon>}
         title={t('template_warning_title')}
         color='yellow'
+        className={styles.alert}
       >
         <p>{t('template_warning_content')}</p>
         <a
@@ -67,21 +76,48 @@ const TemplateForm = ({ handleOnClose }: Props) => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          {t('go_to_waba_console')}&#8594;
+          {t('go_to_waba_console')} &#8594;
         </a>
       </Alert>
+
       <TextInput required label={t('name')} {...form.getInputProps('name')} />
+
       <TextInput
         label={t('description')}
         {...form.getInputProps('description')}
       />
-      <Textarea label={t('preview')} {...form.getInputProps('preview')} />
+
+      <Textarea
+        autosize
+        minRows={4}
+        label={t('preview')}
+        {...form.getInputProps('preview')}
+      />
+
+      <div className={styles.variableInputs}>
+        <TextInput
+          label={t('variable_number', { number: 1 })}
+          placeholder={'{{1}}'}
+          {...form.getInputProps('variable1')}
+        />
+        <TextInput
+          label={t('variable_number', { number: 2 })}
+          placeholder={'{{2}}'}
+          {...form.getInputProps('variable2')}
+        />
+        <TextInput
+          label={t('variable_number', { number: 3 })}
+          placeholder={'{{3}}'}
+          {...form.getInputProps('variable3')}
+        />
+      </div>
+
       <MultiSelect
         data={categories}
         label={t('category', { count: 0 })}
         {...form.getInputProps('categoryIds')}
       />
-      <Textarea label={t('variable', { count: 0 })} />
+
       <Group position='right' mt='md'>
         <SecondaryButton onClick={handleOnClose}>{t('cancel')}</SecondaryButton>
         <Button

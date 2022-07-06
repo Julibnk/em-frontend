@@ -1,0 +1,20 @@
+.variableInputs {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.alert {
+  margin-bottom: 1.2rem;
+}
+
+.alert a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  text-decoration: none;
+  color: var(--mantine-color-yellow-6);
+  font-weight: 600;
+}
+.alert a:hover {
+  color: var(--mantine-color-yellow-8);
+  font-weight: 600;
+}

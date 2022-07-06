@@ -31,7 +31,7 @@ const templateSlice = createSlice({
           name: 'Template 100',
           description: 'plantilla 1',
           preview: 'Holabienvenido a blablablablbaba',
-          categoryIds: [10, 40],
+          categoryIds: ['10', '40'],
         },
         {
           id: '200',
