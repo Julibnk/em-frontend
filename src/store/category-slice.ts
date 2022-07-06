@@ -1,10 +1,17 @@
-import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+import { setSelectedId as helperSetSelectedId } from '@helpers/reducers';
+import { createSlice, createEntityAdapter, EntityId } from '@reduxjs/toolkit';
 
 import { Category } from '../types/store';
 
 export const categoryAdapter = createEntityAdapter<Category>();
 
-const initialState = categoryAdapter.getInitialState();
+type InitialState = {
+  selectedId: EntityId | null;
+};
+
+const initialState = categoryAdapter.getInitialState({
+  selectedId: null,
+} as InitialState);
 
 const categorySlice = createSlice({
   name: 'category',
@@ -24,9 +31,10 @@ const categorySlice = createSlice({
         { id: '60', name: 'Categoria 60', templateIds: [] },
       ]);
     },
+    setSelectedId: helperSetSelectedId,
   },
 });
 
-export const { addCategory, init } = categorySlice.actions;
+export const { addCategory, init, setSelectedId } = categorySlice.actions;
 
 export default categorySlice.reducer;

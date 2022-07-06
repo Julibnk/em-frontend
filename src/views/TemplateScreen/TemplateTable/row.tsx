@@ -9,6 +9,8 @@ import { useDispatch } from '@store/store';
 import { ActionCell, BadgeCell } from '@components/TableCells';
 import { Template } from '../../../types/store';
 import { CategoryBadge } from '@components/Badges';
+import { setSelectedId } from '@store/template-slice';
+import { EntityId } from '@reduxjs/toolkit';
 
 type Props = {
   template: Template;
@@ -19,10 +21,14 @@ const TemplateTableRow = ({ template }: Props) => {
 
   const dispatch = useDispatch();
 
-  const handleOnEdit = () => {
-    dispatch(setModalOpenend({ modal: 'template', opened: true }));
+  const handleOnEdit = (id: EntityId) => {
+    dispatch(setSelectedId(id));
+    dispatch(
+      setModalOpenend({ modal: 'template', opened: true, mode: 'edit' })
+    );
   };
-  const handleOnDelete = () => {
+  const handleOnDelete = (id: EntityId) => {
+    dispatch(setSelectedId(id));
     dispatch(setModalOpenend({ modal: 'template', opened: true }));
   };
 
@@ -39,10 +45,10 @@ const TemplateTableRow = ({ template }: Props) => {
       </Td>
       <Td>
         <ActionCell>
-          <ActionIcon onClick={handleOnEdit}>
+          <ActionIcon onClick={() => handleOnEdit(id)}>
             <FontAwesomeIcon size='lg' icon={faPen}></FontAwesomeIcon>
           </ActionIcon>
-          <ActionIcon onClick={handleOnDelete}>
+          <ActionIcon onClick={() => handleOnDelete(id)}>
             <FontAwesomeIcon size='lg' icon={faTrashAlt}></FontAwesomeIcon>
           </ActionIcon>
         </ActionCell>

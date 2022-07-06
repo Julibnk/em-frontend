@@ -1,4 +1,6 @@
-import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+import { createSlice, createEntityAdapter, EntityId } from '@reduxjs/toolkit';
+
+import { setSelectedId as helperSetSelectedId } from '@helpers/reducers';
 
 import { Template } from '../types/store';
 
@@ -6,8 +8,13 @@ export const templateAdapter = createEntityAdapter<Template>({
   sortComparer: (a, b) => a.name.localeCompare(b.name),
 });
 
-const initialState = templateAdapter.getInitialState();
-// const selectors = templateAdapter.getSelectors();
+type InitialState = {
+  selectedId: EntityId | null;
+};
+
+const initialState = templateAdapter.getInitialState({
+  selectedId: null,
+} as InitialState);
 
 const templateSlice = createSlice({
   name: 'template',
@@ -27,9 +34,10 @@ const templateSlice = createSlice({
         { id: '600', name: 'Template 600', categoryIds: [] },
       ]);
     },
+    setSelectedId: helperSetSelectedId,
   },
 });
 
-export const { addTemplate, init } = templateSlice.actions;
+export const { addTemplate, init, setSelectedId } = templateSlice.actions;
 
 export default templateSlice.reducer;
