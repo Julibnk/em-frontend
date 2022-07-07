@@ -34,7 +34,7 @@ const NavBarMenuItem = ({ text, icon, className, to }: Props) => {
   const { navbarCollapsed } = useSelector((state) => state.layout);
 
   const resolved = useResolvedPath(to);
-  const match = useMatch({ path: resolved.pathname, end: true });
+  const match = useMatch({ path: `${resolved.pathname}/*`, end: true });
 
   const variant = match ? 'filled' : 'subtle';
 

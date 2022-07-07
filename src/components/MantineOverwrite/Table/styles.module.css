@@ -16,7 +16,6 @@
 /* cambiar que cada tabla tenga su propio max heigh */
 .table tbody {
   display: block;
-  max-height: 30rem;
   overflow-y: auto;
 }
 .table tr {

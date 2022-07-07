@@ -1,12 +1,12 @@
 import { ScreenContent } from '@components/Layout/ScreenContent';
-import MessageTable from './MessageTable';
-import MessageTableHeader from './MessageTableHeader';
+import MessageListTable from './MessageListTable';
+import MessageListHeader from './MessageListHeader';
 
 const MessageListScreen = () => {
   return (
     <ScreenContent>
-      <MessageTableHeader />
-      <MessageTable />
+      <MessageListHeader />
+      <MessageListTable />
     </ScreenContent>
   );
 };

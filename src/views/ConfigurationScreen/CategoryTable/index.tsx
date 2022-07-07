@@ -1,3 +1,5 @@
+import styles from './styles.module.css';
+
 import { Table, Th } from '@components/MantineOverwrite/Table';
 import { init } from '@store/category-slice';
 import { useDispatch, useSelector } from '@store/store';
@@ -19,7 +21,7 @@ const CategoryTable = () => {
   const { t } = useTranslation();
 
   return (
-    <Table>
+    <Table className={styles.table}>
       <thead>
         <tr>
           <Th>{t('name')}</Th>

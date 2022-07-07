@@ -16,6 +16,7 @@ type TdProps = {
 
 type TableProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
 export const Th = ({ children, textAlign = 'left' }: ThProps) => {
@@ -36,12 +37,13 @@ export const Td = ({
   return <td className={className}>{children}</td>;
 };
 
-export const Table = ({ children }: TableProps) => {
+export const Table = ({ children, className }: TableProps) => {
   return (
-    <MantineTable highlightOnHover className={styles.table}>
+    <MantineTable
+      highlightOnHover
+      className={`${styles.table} ${className && className}`}
+    >
       {children}
     </MantineTable>
   );
 };
-
-// export default Table;

@@ -8,7 +8,7 @@ import { useSelector } from '@store/store';
 import MessageTableRow from './row';
 import { selectAllMessages } from '@store/message-selector';
 
-const MessageTable = () => {
+const MessageListTable = () => {
   // const dispatch = useDispatch();
 
   // useEffect(() => {
@@ -39,4 +39,4 @@ const MessageTable = () => {
   );
 };
 
-export default MessageTable;
+export default MessageListTable;

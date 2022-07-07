@@ -1,3 +1,4 @@
+import styles from './styles.module.css';
 import { Table, Th } from '@components/MantineOverwrite/Table';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from '@store/store';
@@ -18,7 +19,7 @@ const TemplateTable = () => {
   const { t } = useTranslation();
 
   return (
-    <Table>
+    <Table className={styles.table}>
       <thead>
         <tr>
           <Th>{t('name')}</Th>

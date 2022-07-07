@@ -9,14 +9,16 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from '@store/store';
 import { setModalOpenend } from '@store/layout-slice';
-import { setSelectedId } from '@store/template-slice';
 import SecondaryButton from '@components/MantineOverwrite/SecondaryButton';
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
-const MessageTableHeader = () => {
+const MessageListHeader = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const handleOnCreateMessage = () => {
     dispatch(
@@ -24,7 +26,7 @@ const MessageTableHeader = () => {
     );
   };
   const handleOnMessageLoad = () => {
-    dispatch(setModalOpenend({ modal: 'message_load', opened: true }));
+    navigate('../load');
   };
 
   return (
@@ -35,10 +37,7 @@ const MessageTableHeader = () => {
           placeholder={t('search')}
           icon={<FontAwesomeIcon icon={faSearch} />}
         />
-        <SecondaryButton
-          // onClick={handleOnAdd}
-          leftIcon={<FontAwesomeIcon icon={faFilter} />}
-        >
+        <SecondaryButton leftIcon={<FontAwesomeIcon icon={faFilter} />}>
           {t('filter', { count: 0 })}
         </SecondaryButton>
       </div>
@@ -62,4 +61,4 @@ const MessageTableHeader = () => {
   );
 };
 
-export default MessageTableHeader;
+export default MessageListHeader;
