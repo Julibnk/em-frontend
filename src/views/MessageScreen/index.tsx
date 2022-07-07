@@ -1,13 +1,13 @@
-import { ScreenContent } from '@components/Layout/ScreenContent';
-import MessageTable from './MessageTable';
-import MessageTableHeader from './MessageTableHeader/index';
+import MessageListScreen from '@views/MessageListScreen';
+import MessageLoadScreen from '@views/MessageLoadScreen';
+import { Route, Routes } from 'react-router-dom';
 
 const MessageScreen = () => {
   return (
-    <ScreenContent>
-      <MessageTableHeader />
-      <MessageTable />
-    </ScreenContent>
+    <Routes>
+      <Route index element={<MessageListScreen />} />
+      <Route path='load' element={<MessageLoadScreen />} />
+    </Routes>
   );
 };
 
