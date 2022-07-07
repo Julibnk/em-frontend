@@ -9,7 +9,7 @@ const NavBarHeader = () => {
   return (
     <Navbar.Section>
       <NavBarMenuItem
-        to='/cambiar'
+        to='/home'
         icon={Logo}
         text='EASYMESSAGE'
       ></NavBarMenuItem>
