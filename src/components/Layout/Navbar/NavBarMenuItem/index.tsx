@@ -12,8 +12,9 @@ type Props = {
   variant?: ButtonVariant;
 };
 
+//TODO Tipar return antes estaba {} pero eslint peta
 // Define los estilos del componente botton en funcion de la variante
-const getClassNames = (variant: ButtonVariant, collapsed: Boolean): {} => {
+const getClassNames = (variant: ButtonVariant, collapsed: boolean) => {
   if (variant === 'subtle') {
     return {
       root: `${styles.root} ${styles.subtle_root}`,

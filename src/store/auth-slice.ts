@@ -18,7 +18,9 @@ const initialState: AuthState = {
 
 export const getUserAuth = createAsyncThunk(
   'auth/getUserAuth',
-  async (userData: FormData, { rejectWithValue }) => {}
+  async (userData: FormData, { rejectWithValue }) => {
+    // return true;
+  }
 );
 
 export const initApp = createAsyncThunk(
