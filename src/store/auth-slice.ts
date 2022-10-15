@@ -17,19 +17,21 @@ const initialState: AuthState = {
 };
 
 export const getUserAuth = createAsyncThunk(
-  '[AUTH]/getUserAuth',
-  async (userData: FormData, { rejectWithValue }) => {}
+  'auth/getUserAuth',
+  async (userData: FormData, { rejectWithValue }) => {
+    // return true;
+  }
 );
 
 export const initApp = createAsyncThunk(
-  '[AUTH]/initApp',
+  'auth/initApp',
   async (username: string, { dispatch, rejectWithValue }) => {
     return { masterdata: [], user: {} };
   }
 );
 
 export const authSlice = createSlice({
-  name: '[AUTH]',
+  name: 'auth',
   initialState,
   reducers: {
     logout: (state) => {

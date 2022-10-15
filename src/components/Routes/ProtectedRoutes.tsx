@@ -22,7 +22,7 @@ const ProtectedRoutes = () => {
           );
         })}
 
-        <Route path='/*' element={<Navigate to='message'></Navigate>}></Route>
+        <Route path='/*' element={<Navigate to='home'></Navigate>}></Route>
       </Route>
     </Routes>
   );

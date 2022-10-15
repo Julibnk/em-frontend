@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+export type ModalMode = 'create' | 'edit' | 'display' | undefined;
+export type AllModals = 'category' | 'template' | 'message' | 'message_load';
+
 type ModalState = {
   opened: boolean;
   loading: boolean;
+  mode: ModalMode;
 };
-
-type AllModals = 'category' | 'template';
 
 type Modals = {
   [modal in AllModals]: ModalState;
@@ -18,22 +20,35 @@ export type LayoutState = {
 };
 
 const initialState: LayoutState = {
-  navbarCollapsed: true,
+  navbarCollapsed: false,
   fullPageLoading: false,
   modals: {
     category: {
       loading: false,
       opened: false,
+      mode: undefined,
+      // mode: ,
     },
     template: {
       loading: false,
       opened: false,
+      mode: undefined,
+    },
+    message: {
+      loading: false,
+      opened: false,
+      mode: undefined,
+    },
+    message_load: {
+      loading: false,
+      opened: false,
+      mode: undefined,
     },
   },
 };
 
 export const layoutSlice = createSlice({
-  name: '[LAYOUT]',
+  name: 'layout',
   initialState,
   reducers: {
     fullPageLoading: (state, { payload }: PayloadAction<boolean>) => {
@@ -46,9 +61,13 @@ export const layoutSlice = createSlice({
 
     setModalOpenend: (
       state,
-      { payload }: PayloadAction<{ modal: AllModals; opened: boolean }>
+      {
+        payload,
+      }: PayloadAction<{ modal: AllModals; opened: boolean; mode?: ModalMode }>
     ) => {
       state.modals[payload.modal].opened = payload.opened;
+
+      if (payload.mode) state.modals[payload.modal].mode = payload.mode;
     },
 
     setModalLoading: (

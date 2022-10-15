@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left,
+.right {
+  display: flex;
+  gap: 1.2rem;
+}

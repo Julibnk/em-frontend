@@ -1,10 +1,15 @@
 {
   "search": "Buscar",
   "create": "Crear",
+  "save": "Guardar",
   "cancel": "Cancelar",
   "delete": "Eliminar",
+  "load": "Cargar",
   "edit": "Editar",
   "add": "Añadir",
+  "preview": "Vista previa",
+  "actions": "Acciones",
+  "home": "Inicio",
 
   "name": "Nombre",
   "description": "Descripción",
@@ -26,10 +31,31 @@
   "category_one": "Categoría",
   "category_other": "Categorías",
 
+  "filter_one": "Filtro",
+  "filter_other": "Filtros",
+
+  "configuration": "Configuración",
+
+  "variable_one": "Variable",
+  "variable_other": "Variables",
+  "variable_number": "Variable {{number}}",
+  "waba_variable_number": "{{{{number}}}} ",
+
   "profile": "Perfil",
 
+  "--- SECTION SUBTITLE ----": "",
   "message_subtitle": "Consulte y envie Whatsapps a sus contactos",
   "contact_subtitle": "Gestione sus contactos",
-  "template_subtitle": "Consulte y configure plantillas y categorias",
-  "profile_subtitle": "Revise y guarde sus datos"
+  "configuration_subtitle": "Configure y consulte plantillas y categorias",
+  "profile_subtitle": "Revise y guarde sus datos",
+
+  "--- TEMPLATE MODAL -----": "",
+  "template_warning_title": "Infomación importante",
+  "template_warning_content": "Para el correcto funcionamiento de la herramienta, es necesario que el nombre de la plantilla y el orden de las variables coincida con la configuracion de Watsapp Bussines",
+  "go_to_waba_console": "Ir a consola de Watsapp Bussines",
+  "template_preview_placeholder": "Pegue aqui el texto completo de la plantilla para tenerlo como referencia",
+
+  "--- MESSAGE TABLE HEADER -----": "",
+  "create_message": "Crear mensaje",
+  "message_load": "Cargar mensajes"
 }

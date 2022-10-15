@@ -1,8 +1,13 @@
+import MessageListScreen from '@views/MessageListScreen';
+import MessageLoadScreen from '@views/MessageLoadScreen';
+import { Route, Routes } from 'react-router-dom';
+
 const MessageScreen = () => {
   return (
-    <div>
-      <h1>MessageScreen</h1>
-    </div>
+    <Routes>
+      <Route index element={<MessageListScreen />} />
+      <Route path='load' element={<MessageLoadScreen />} />
+    </Routes>
   );
 };
 

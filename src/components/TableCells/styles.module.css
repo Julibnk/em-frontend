@@ -1,0 +1,29 @@
+.action {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.action Button {
+  color: var(--mantine-color-gray-5);
+}
+.action Button:hover {
+  color: var(--mantine-color-gray-6);
+}
+
+.badge {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.title {
+  display: block;
+  color: var(--mantine-color-gray-7);
+  font-weight: 600;
+}
+
+.subtitle {
+  display: block;
+}

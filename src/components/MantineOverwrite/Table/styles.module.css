@@ -1,0 +1,65 @@
+.table {
+  border-spacing: 0;
+  border: 1px solid var(--mantine-color-gray-4);
+  border-radius: 8px;
+  border-collapse: separate;
+  background-color: #fff;
+  color: var(--mantine-color-gray-5) !important;
+  table-layout: fixed;
+}
+
+.table thead {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* cambiar que cada tabla tenga su propio max heigh */
+.table tbody {
+  display: block;
+  overflow-y: auto;
+}
+.table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.th {
+  background-color: var(--mantine-color-gray-2);
+  color: var(--mantine-color-gray-7) !important;
+  font-weight: 600 !important;
+  padding: 0.8rem 1.2rem !important;
+}
+
+.th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.td {
+  padding: 1.2rem 1.2rem !important;
+}
+
+.table tr:hover {
+  background-color: var(--mantine-color-gray-0) !important;
+}
+
+.left {
+  text-align: left !important;
+}
+
+.right {
+  text-align: right !important;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.emphasized {
+  color: var(--mantine-color-gray-7);
+  font-weight: 600;
+}

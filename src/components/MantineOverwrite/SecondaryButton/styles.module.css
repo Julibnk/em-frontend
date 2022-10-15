@@ -1,3 +1,7 @@
 .outline {
   border-color: var(--mantine-color-gray-4);
+  background-color: #fff;
+}
+.outline:hover {
+  background-color: var(--mantine-color-gray-1);
 }

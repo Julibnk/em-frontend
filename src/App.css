@@ -18,3 +18,48 @@
 .input_label {
   color: var(--mantine-color-gray-6);
 }
+
+.w-full {
+  width: 100% !important;
+}
+
+.p-none {
+  padding: 0 !important;
+}
+.block {
+  display: block !important;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.modal_form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-sm {
+  gap: 0.8rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}

@@ -4,7 +4,7 @@ import Header from '../Header';
 
 const Main = () => {
   return (
-    <main className={styles.main}>
+    <main>
       <div className={styles.main_container}>
         <Header />
         <div className={styles.sub_container}>

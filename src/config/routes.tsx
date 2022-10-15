@@ -10,6 +10,10 @@ export interface Route {
 
 export const routes: Route[] = [
   {
+    path: 'home/*',
+    component: lazy(() => import('@views/HomeScreen')),
+  },
+  {
     path: 'message/*',
     title: i18n.t('message', { count: 0 }),
     subtitle: i18n.t('message_subtitle'),
@@ -23,10 +27,10 @@ export const routes: Route[] = [
     component: lazy(() => import('@views/ContactScreen')),
   },
   {
-    path: 'template/*',
-    title: i18n.t('template', { count: 0 }),
-    subtitle: i18n.t('template_subtitle'),
-    component: lazy(() => import('@views/TemplateScreen')),
+    path: 'configuration/*',
+    title: i18n.t('configuration', { count: 0 }),
+    subtitle: i18n.t('configuration_subtitle'),
+    component: lazy(() => import('@views/ConfigurationScreen')),
   },
   {
     path: 'profile/*',
